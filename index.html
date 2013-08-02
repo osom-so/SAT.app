@@ -4,6 +4,31 @@
 <title>SAT App</title>
 </head>
 <body>
+<div id="app"></div>
+
+<script type="text/template" id="tmpl-login">
+<h2>Acceso</h2>
+<form id="login">
+<p>
+<label>
+RFC:<br>
+<input type="text" class="inputtext" placeholder="RFC">
+</label>
+</p>
+<p>
+<label>
+Contraseña:<br>
+<input type="password" class="inputtext inputpassword" placeholder="Contraseña">
+</label>
+</p>
+<p>
+<input type="submit" class="inputsubmit" value="Acceso">
+</p>
+</form>
+</script>
+<script type="text/template" id="tmpl-index">
+<h2>Bienvenido.</h2>
+</script>
 <script src="/js/jquery.js"></script>
 <script src="/js/underscore.js"></script>
 <script src="/js/backbone.js"></script>

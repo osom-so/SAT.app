@@ -6,30 +6,31 @@
     var router, _ref, _ref1, _ref2, _ref3;
     window.SAT = {};
     SAT.isLogged = false;
-    SAT.currentView = true;
-    Backbone.AView = (function(_super) {
-      __extends(AView, _super);
+    SAT.currentView = 0;
+    Backbone.AnimView = (function(_super) {
+      __extends(AnimView, _super);
 
-      function AView() {
-        _ref = AView.__super__.constructor.apply(this, arguments);
+      function AnimView() {
+        _ref = AnimView.__super__.constructor.apply(this, arguments);
         return _ref;
       }
 
-      AView.prototype.getAnimEl = function() {
-        return Backbone.$((SAT.currentView = !SAT.currentView) ? '#app' : '#app2');
+      AnimView.prototype.switchEl = function() {
+        this.$prev = Backbone.$(SAT.currentView % 2 ? '#app' : '#app2');
+        return this.$el = Backbone.$(SAT.currentView % 2 ? '#app2' : '#app');
       };
 
-      AView.prototype.setElement = function(element, delegate) {
-        AView.__super__.setElement.apply(this, arguments);
-        return this.$el = this.getAnimEl();
+      AnimView.prototype.setElement = function() {
+        AnimView.__super__.setElement.apply(this, arguments);
+        this.switchEl();
+        if (SAT.currentView) {
+          this.$prev.removeClass('slide-in slide-out').addClass('slide-out');
+          this.$el.removeClass('slide-in slide-out').addClass('slide-in');
+        }
+        return SAT.currentView++;
       };
 
-      AView.prototype.render = function() {
-        this.$el = this.getAnimEl();
-        return AView.__super__.render.apply(this, arguments);
-      };
-
-      return AView;
+      return AnimView;
 
     })(Backbone.View);
     /* Models*/
@@ -67,7 +68,7 @@
 
       return loginView;
 
-    })(Backbone.AView);
+    })(Backbone.AnimView);
     SAT.indexView = (function(_super) {
       __extends(indexView, _super);
 
@@ -87,7 +88,7 @@
 
       return indexView;
 
-    })(Backbone.AView);
+    })(Backbone.AnimView);
     /* Router*/
 
     SAT.Router = (function(_super) {

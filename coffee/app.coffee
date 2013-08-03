@@ -1,22 +1,24 @@
 $ ->
   window.SAT = {}
   SAT.isLogged = false
-  SAT.currentView = true
+  SAT.currentView = 0
 
-  class Backbone.AView extends Backbone.View
-    getAnimEl: ->
-      Backbone.$(if(SAT.currentView = !SAT.currentView) then '#app' else '#app2')
-    setElement: (element,delegate)->
+  class Backbone.AnimView extends Backbone.View
+    switchEl: ->
+      @$prev = Backbone.$(if SAT.currentView%2 then '#app' else '#app2')
+      @$el = Backbone.$(if SAT.currentView%2 then '#app2' else '#app')
+    setElement: ->
       super
-      @$el = @getAnimEl()
-    render: ->
-      @$el = @getAnimEl()
-      super
+      @switchEl()
+      if SAT.currentView
+        @$prev.removeClass('slide-in slide-out').addClass 'slide-out'
+        @$el.removeClass('slide-in slide-out').addClass 'slide-in'
+      SAT.currentView++
 
   ### Models ###
   ### Collections ###
   ### Views ###
-  class SAT.loginView extends Backbone.AView
+  class SAT.loginView extends Backbone.AnimView
     el: '#app'
     template: _.template $('#tmpl-login').html()
     events:
@@ -29,7 +31,7 @@ $ ->
       @$el.html @template
       @
 
-  class SAT.indexView extends Backbone.AView
+  class SAT.indexView extends Backbone.AnimView
     el: '#app'
     template: _.template $('#tmpl-index').html()
     render: ->

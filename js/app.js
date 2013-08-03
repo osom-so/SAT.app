@@ -3,9 +3,35 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   $(function() {
-    var router, _ref, _ref1, _ref2;
+    var router, _ref, _ref1, _ref2, _ref3;
     window.SAT = {};
     SAT.isLogged = false;
+    SAT.currentView = true;
+    Backbone.AView = (function(_super) {
+      __extends(AView, _super);
+
+      function AView() {
+        _ref = AView.__super__.constructor.apply(this, arguments);
+        return _ref;
+      }
+
+      AView.prototype.getAnimEl = function() {
+        return Backbone.$((SAT.currentView = !SAT.currentView) ? '#app' : '#app2');
+      };
+
+      AView.prototype.setElement = function(element, delegate) {
+        AView.__super__.setElement.apply(this, arguments);
+        return this.$el = this.getAnimEl();
+      };
+
+      AView.prototype.render = function() {
+        this.$el = this.getAnimEl();
+        return AView.__super__.render.apply(this, arguments);
+      };
+
+      return AView;
+
+    })(Backbone.View);
     /* Models*/
 
     /* Collections*/
@@ -16,8 +42,8 @@
       __extends(loginView, _super);
 
       function loginView() {
-        _ref = loginView.__super__.constructor.apply(this, arguments);
-        return _ref;
+        _ref1 = loginView.__super__.constructor.apply(this, arguments);
+        return _ref1;
       }
 
       loginView.prototype.el = '#app';
@@ -41,13 +67,13 @@
 
       return loginView;
 
-    })(Backbone.View);
+    })(Backbone.AView);
     SAT.indexView = (function(_super) {
       __extends(indexView, _super);
 
       function indexView() {
-        _ref1 = indexView.__super__.constructor.apply(this, arguments);
-        return _ref1;
+        _ref2 = indexView.__super__.constructor.apply(this, arguments);
+        return _ref2;
       }
 
       indexView.prototype.el = '#app';
@@ -61,15 +87,15 @@
 
       return indexView;
 
-    })(Backbone.View);
+    })(Backbone.AView);
     /* Router*/
 
     SAT.Router = (function(_super) {
       __extends(Router, _super);
 
       function Router() {
-        _ref2 = Router.__super__.constructor.apply(this, arguments);
-        return _ref2;
+        _ref3 = Router.__super__.constructor.apply(this, arguments);
+        return _ref3;
       }
 
       Router.prototype.routes = {

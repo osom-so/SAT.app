@@ -19,7 +19,8 @@ $ ->
         top: window.scrollY
 
   Backbone.history.bind 'route', ->
-    if SAT.history.length > 1 and @getFragment() is SAT.history[-2..][0]
+    history = SAT.history.get('history')
+    if history.length > 1 and @getFragment() is history[-2..][0]
       SAT.history.pop()
       SAT.goBack = true
     else
@@ -41,6 +42,20 @@ $ ->
         SAT.currentView++
 
   ### Models ###
+  class SAT.historyModel extends Backbone.Model
+    defaults:
+      history: []
+    pop: (el)->
+      history = @get 'history'
+      history.pop()
+      @set 'history', history
+      @trigger 'history:change', @
+    push: (el)->
+      history = @get 'history'
+      history.push el
+      @set 'history', history
+      @trigger 'history:change', @
+
   ### Collections ###
   ### Views ###
   class SAT.headerView extends Backbone.View
@@ -50,9 +65,18 @@ $ ->
       'click a.back': 'evt_back'
       'click a.notif': 'evt_notif'
       'click a.help': 'evt_help'
+    initialize: (ini)->
+      @history = ini.history
+      @listenTo @history, 'history:change', (h)->
+        history = h.get('history')
+        if history.length > 2
+          @$el.prop 'class', 'has-history'
+        else
+          @$el.prop 'class', ''
     evt_back: (e)->
       e.preventDefault()
-      router.navigate SAT.history[-2..][0], true
+      history = SAT.history.get('history')
+      router.navigate history[-2..][0], true
     evt_notif: (e)->
       e.preventDefault()
     evt_help: (e)->
@@ -118,8 +142,10 @@ $ ->
       citasview = new SAT.citasView
       citasview.render()
 
+  SAT.history = new SAT.historyModel
+
+  header = new SAT.headerView(history: SAT.history)
+  header.render()
+
   router = new SAT.Router
   Backbone.history.start()
-
-  header = new SAT.headerView
-  header.render()

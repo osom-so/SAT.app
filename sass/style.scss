@@ -15,14 +15,16 @@ header#app-header{
   right: 0;
   background: #fff;
   min-height: 44px;
+  border-bottom: 1px solid #ccc;
   span.logo{
     position: absolute;
     top: 5px;
     bottom: 0;
-    left: 50px;
+    left: 6px;
     width: 110px;
     background: url('/img/sat.png') no-repeat;
     background-size: auto 35px;
+    transition: left 0.33s;
   }
   a.action{
     position: absolute;
@@ -36,11 +38,23 @@ header#app-header{
     color: #fff;
     text-decoration: none;
     background: rgba(#000, 0.3);
+    transition: left 0.33s;
+    &.back{
+      left: -44px;
+    }
     &.help{
       right: 0;
     }
     &.notif{
       right: 44px;
+    }
+  }
+  &.has-history{
+    a.back{
+      left: 0;
+    }
+    span.logo{
+      left: 50px;
     }
   }
 }
@@ -62,19 +76,6 @@ header#app-header{
 
 .wrap{
   padding: 0 10px;
-}
-
-ul.touch-list{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  > li{
-    a{
-      background: rgba(#fff, .5);
-      padding: 10px 10px;
-      display: block;
-    }
-  }
 }
 
 .slide-in{
@@ -129,3 +130,5 @@ ul.touch-list{
     -webkit-transform: translateX(0%);
   }
 }
+
+@import 'secciones';

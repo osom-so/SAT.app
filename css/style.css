@@ -13,15 +13,17 @@ header#app-header {
   left: 0;
   right: 0;
   background: #fff;
-  min-height: 44px; }
+  min-height: 44px;
+  border-bottom: 1px solid #ccc; }
   header#app-header span.logo {
     position: absolute;
     top: 5px;
     bottom: 0;
-    left: 50px;
+    left: 6px;
     width: 110px;
     background: url("/img/sat.png") no-repeat;
-    background-size: auto 35px; }
+    background-size: auto 35px;
+    transition: left 0.33s; }
   header#app-header a.action {
     position: absolute;
     top: 0;
@@ -33,11 +35,18 @@ header#app-header {
     text-align: center;
     color: #fff;
     text-decoration: none;
-    background: rgba(0, 0, 0, 0.3); }
+    background: rgba(0, 0, 0, 0.3);
+    transition: left 0.33s; }
+    header#app-header a.action.back {
+      left: -44px; }
     header#app-header a.action.help {
       right: 0; }
     header#app-header a.action.notif {
       right: 44px; }
+  header#app-header.has-history a.back {
+    left: 0; }
+  header#app-header.has-history span.logo {
+    left: 50px; }
 
 #app-main {
   position: relative; }
@@ -54,15 +63,6 @@ header#app-header {
 
 .wrap {
   padding: 0 10px; }
-
-ul.touch-list {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-  ul.touch-list > li a {
-    background: rgba(255, 255, 255, 0.5);
-    padding: 10px 10px;
-    display: block; }
 
 .slide-in {
   z-index: 101;
@@ -106,3 +106,53 @@ ul.touch-list {
 
   100% {
     -webkit-transform: translateX(0%); } }
+
+.ctr {
+  text-align: center; }
+
+.lft {
+  text-align: left; }
+
+.rgt {
+  text-align: right; }
+
+.inlineblock {
+  display: inline-block; }
+
+ul.touch-list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  ul.touch-list > li a {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px 10px;
+    display: block; }
+
+::-webkit-input-placeholder {
+  color: #999; }
+
+.inputtext, .inputsubmit {
+  font-size: 1rem;
+  border-radius: 0;
+  margin: 0; }
+
+.inputtext {
+  color: #666;
+  border: 1px solid #eee;
+  padding: 0.3rem; }
+  .inputtext.uppercase {
+    text-transform: uppercase; }
+  .inputtext:focus {
+    outline: 0;
+    border: 1px solid #999;
+    color: #333; }
+
+.inputsubmit {
+  padding: 0.45rem 0.65rem;
+  border: 0; }
+  .inputsubmit.main {
+    background: #99f;
+    color: #fff; }
+  .inputsubmit.block {
+    width: 100%;
+    display: block; }

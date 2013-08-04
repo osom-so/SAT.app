@@ -20,6 +20,7 @@ $ ->
 
   Backbone.history.bind 'route', ->
     history = SAT.history.get('history')
+    return if history[-1..][0] is @getFragment()
     if history.length > 1 and @getFragment() is history[-2..][0]
       SAT.history.pop()
       SAT.goBack = true
@@ -69,7 +70,7 @@ $ ->
       @history = ini.history
       @listenTo @history, 'history:change', (h)->
         history = h.get('history')
-        if history.length > 2
+        if history.length > 1
           @$el.prop 'class', 'has-history'
         else
           @$el.prop 'class', ''
@@ -96,6 +97,7 @@ $ ->
       setTimeout ->
         router.navigate '', true
       , 400
+      SAT.history.set 'history', _.reject(SAT.history.get('history'), (h)-> h is 'login' )
       @$el.get(0).focus()
     render: ->
       @$el.html @template

@@ -31,6 +31,9 @@
     Backbone.history.bind('route', function() {
       var history;
       history = SAT.history.get('history');
+      if (history.slice(-1)[0] === this.getFragment()) {
+        return;
+      }
       if (history.length > 1 && this.getFragment() === history.slice(-2)[0]) {
         SAT.history.pop();
         return SAT.goBack = true;
@@ -129,7 +132,7 @@
         return this.listenTo(this.history, 'history:change', function(h) {
           var history;
           history = h.get('history');
-          if (history.length > 2) {
+          if (history.length > 1) {
             return this.$el.prop('class', 'has-history');
           } else {
             return this.$el.prop('class', '');
@@ -182,6 +185,9 @@
         setTimeout(function() {
           return router.navigate('', true);
         }, 400);
+        SAT.history.set('history', _.reject(SAT.history.get('history'), function(h) {
+          return h === 'login';
+        }));
         return this.$el.get(0).focus();
       };
 

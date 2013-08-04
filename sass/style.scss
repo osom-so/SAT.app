@@ -45,18 +45,6 @@ header#app-header{
   }
 }
 
-ul.touch-list{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  > li{
-    a{
-      padding: 10px 0;
-      display: block;
-    }
-  }
-}
-
 #app-main{
   position: relative;
 }
@@ -66,11 +54,27 @@ ul.touch-list{
   top: 0;
   left: 0;
   right: 0;
-  padding: 0 10px;
   background: #fff;
 }
 #app2{
   background: #9ff;
+}
+
+.wrap{
+  padding: 0 10px;
+}
+
+ul.touch-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  > li{
+    a{
+      background: rgba(#fff, .5);
+      padding: 10px 10px;
+      display: block;
+    }
+  }
 }
 
 .slide-in{

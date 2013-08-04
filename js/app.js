@@ -131,7 +131,10 @@
       loginView.prototype.evt_login = function(e) {
         e.preventDefault();
         SAT.isLogged = true;
-        return router.navigate('', true);
+        setTimeout(function() {
+          return router.navigate('', true);
+        }, 400);
+        return this.$el.get(0).focus();
       };
 
       loginView.prototype.render = function() {

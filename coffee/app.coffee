@@ -69,7 +69,10 @@ $ ->
     evt_login: (e)->
       e.preventDefault()
       SAT.isLogged = true
-      router.navigate '', true
+      setTimeout ->
+        router.navigate '', true
+      , 400
+      @$el.get(0).focus()
     render: ->
       @$el.html @template
       @

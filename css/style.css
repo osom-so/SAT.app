@@ -16,11 +16,17 @@ body {
 .slide-in {
   z-index: 101;
   -webkit-animation: slidein 0.4s; }
+  .slide-in.slide-back {
+    -webkit-animation: slidein-back 0.4s;
+    -webkit-transform: translateX(0%); }
 
 .slide-out {
   z-index: 100;
   -webkit-animation: slideout 0.4s;
   -webkit-transform: translateX(-100%); }
+  .slide-out.slide-back {
+    -webkit-animation: slideout-back 0.4s;
+    -webkit-transform: translateX(100%); }
 
 @-webkit-keyframes slideout {
   0% {
@@ -32,6 +38,20 @@ body {
 @-webkit-keyframes slidein {
   0% {
     -webkit-transform: translateX(100%); }
+
+  100% {
+    -webkit-transform: translateX(0%); } }
+
+@-webkit-keyframes slideout-back {
+  0% {
+    -webkit-transform: translateX(0%); }
+
+  100% {
+    -webkit-transform: translateX(100%); } }
+
+@-webkit-keyframes slidein-back {
+  0% {
+    -webkit-transform: translateX(-100%); }
 
   100% {
     -webkit-transform: translateX(0%); } }

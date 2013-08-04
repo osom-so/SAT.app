@@ -6,7 +6,17 @@
     var router, _ref, _ref1, _ref2, _ref3;
     window.SAT = {};
     SAT.isLogged = false;
+    SAT.goBack = false;
     SAT.currentView = 0;
+    SAT.history = [];
+    Backbone.history.bind('route', function() {
+      if (SAT.history.length > 1 && this.getFragment() === SAT.history.slice(-2)[0]) {
+        SAT.history.pop();
+        return SAT.goBack = true;
+      } else {
+        return SAT.history.push(this.getFragment());
+      }
+    });
     Backbone.AnimView = (function(_super) {
       __extends(AnimView, _super);
 
@@ -21,13 +31,18 @@
       };
 
       AnimView.prototype.setElement = function() {
+        var view;
         AnimView.__super__.setElement.apply(this, arguments);
         this.switchEl();
-        if (SAT.currentView) {
-          this.$prev.removeClass('slide-in slide-out').addClass('slide-out');
-          this.$el.removeClass('slide-in slide-out').addClass('slide-in');
-        }
-        return SAT.currentView++;
+        view = this;
+        return setTimeout(function() {
+          if (SAT.currentView) {
+            view.$prev.attr('class', "slide-out " + (SAT.goBack ? "slide-back" : ''));
+            view.$el.attr('class', "slide-in " + (SAT.goBack ? "slide-back" : ''));
+            SAT.goBack = false;
+          }
+          return SAT.currentView++;
+        });
       };
 
       return AnimView;

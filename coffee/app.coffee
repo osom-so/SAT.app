@@ -1,7 +1,16 @@
 $ ->
   window.SAT = {}
   SAT.isLogged = false
+  SAT.goBack = false
   SAT.currentView = 0
+  SAT.history = []
+
+  Backbone.history.bind 'route', ->
+    if SAT.history.length > 1 and @getFragment() is SAT.history[-2..][0]
+      SAT.history.pop()
+      SAT.goBack = true
+    else
+      SAT.history.push @getFragment()
 
   class Backbone.AnimView extends Backbone.View
     switchEl: ->
@@ -10,10 +19,13 @@ $ ->
     setElement: ->
       super
       @switchEl()
-      if SAT.currentView
-        @$prev.removeClass('slide-in slide-out').addClass 'slide-out'
-        @$el.removeClass('slide-in slide-out').addClass 'slide-in'
-      SAT.currentView++
+      view = @
+      setTimeout ->
+        if SAT.currentView
+          view.$prev.attr 'class', "slide-out #{if SAT.goBack then "slide-back" else ''}"
+          view.$el.attr 'class', "slide-in #{if SAT.goBack then "slide-back" else ''}"
+          SAT.goBack = false
+        SAT.currentView++
 
   ### Models ###
   ### Collections ###

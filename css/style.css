@@ -1,13 +1,61 @@
 body {
   color: #333;
   background: #eee;
-  overflow-x: hidden; }
+  margin: 0;
+  padding: 44px 0 0;
+  font: 100%/1.15 Helvetica, sans-serif; }
+
+header#app-header {
+  position: fixed;
+  z-index: 300;
+  margin-bottom: 44px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  min-height: 44px; }
+  header#app-header span.logo {
+    position: absolute;
+    top: 5px;
+    bottom: 0;
+    left: 50px;
+    width: 110px;
+    background: url("/img/sat.png") no-repeat;
+    background-size: auto 35px; }
+  header#app-header a.action {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: block;
+    width: 44px;
+    line-height: 44px;
+    font-size: 33px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.3); }
+    header#app-header a.action.help {
+      right: 0; }
+    header#app-header a.action.notif {
+      right: 44px; }
+
+ul.touch-list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  ul.touch-list > li a {
+    padding: 10px 0;
+    display: block; }
+
+#app-main {
+  position: relative; }
 
 #app, #app2 {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  padding: 0 10px;
   background: #fff; }
 
 #app2 {

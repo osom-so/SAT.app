@@ -1,6 +1,6 @@
 body {
   color: #333;
-  background: #eee;
+  background: #fff;
   margin: 0;
   padding: 44px 0 0;
   font: 100%/1.15 proxima-nova-soft, Helvetica, sans-serif;
@@ -20,7 +20,8 @@ header#app-header {
   right: 0;
   min-height: 44px;
   border-bottom: 1px solid #ccc;
-  background-image: linear-gradient(#f6f7f6 50%, #eef0ee 50%);
+  background: #F6F7F6;
+  background: linear-gradient(#f6f7f6 50%, #eef0ee 50%);
 }
 header#app-header span.logo {
   position: absolute;
@@ -52,7 +53,8 @@ header#app-header a.action {
   transition: left 0.33s;
 }
 header#app-header a.action.back {
-  background-image: linear-gradient(#78a3d0 50%, #749eca 50%);
+  background: #78A3D0;
+  background: linear-gradient(#78a3d0 50%, #749eca 50%);
   left: -44px;
 }
 header#app-header a.action.help {
@@ -846,6 +848,14 @@ header#app-header.has-history span.logo {
   display: inline-block;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
+img {
+  max-width: 100%;
+}
+
 ul.touch-list {
   list-style: none;
   margin: 0;
@@ -860,6 +870,40 @@ ul.touch-list > li a.no-el {
 }
 ul.touch-list.with-border > li {
   border-bottom: 1px solid #eee;
+}
+
+.was-full-selected, .full-selected {
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  -o-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+.full-selected {
+  background: #1b2a40;
+  color: #fff;
+}
+.full-selected .full-select-extra-info {
+  height: auto;
+  max-height: 1000px;
+}
+
+.full-select-extra-info {
+  display: block;
+  height: 0;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 1s;
+  -moz-transition: max-height 1s;
+  -o-transition: max-height 1s;
+  transition: max-height 1s;
+}
+
+input.full-select {
+  position: absolute;
+  top: -100px;
+  height: 0;
+  width: 0;
 }
 
 big {
@@ -944,4 +988,10 @@ big.big {
 .inputsubmit.block {
   width: 100%;
   display: block;
+}
+
+#seccion-cita-lugares li.fecha {
+  padding: 5px 0;
+  color: #fff;
+  background: #81ade0;
 }

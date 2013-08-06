@@ -130,6 +130,11 @@ $ ->
   class SAT.citasView extends Backbone.AnimView
     el: '#app'
     template: _.template $('#tmpl-citas').html()
+    events:
+      'click a': 'evt_menuitem'
+    evt_menuitem: (e)->
+      e.preventDefault()
+      router.navigate $(e.currentTarget).attr('href'), true
     render: ->
       @$el.html @template
       @
@@ -175,12 +180,60 @@ $ ->
       @$el.html @template
       @
 
+  class SAT.citaAgendarView extends Backbone.AnimView
+    el: '#app'
+    template: _.template $('#tmpl-cita-agendar').html()
+    events:
+      'submit form': 'evt_submit'
+    evt_submit: (e)->
+      e.preventDefault()
+      router.navigate $(e.currentTarget).attr('action'), true
+    render: ->
+      @$el.html @template
+      @
+
+  class SAT.citaAgendarLugaresView extends Backbone.AnimView
+    el: '#app'
+    template: _.template $('#tmpl-cita-agendar-lugares').html()
+    events:
+      'submit form': 'evt_submit'
+    evt_submit: (e)->
+      e.preventDefault()
+      router.navigate $(e.currentTarget).attr('action'), true
+    render: ->
+      @$el.html @template
+      @
+
+  class SAT.citaAgendarConfirmarView extends Backbone.AnimView
+    el: '#app'
+    template: _.template $('#tmpl-cita-agendar-confirmar').html()
+    events:
+      'submit form': 'evt_submit'
+    evt_submit: (e)->
+      e.preventDefault()
+      router.navigate $(e.currentTarget).attr('action'), true
+    render: ->
+      @$el.html @template
+      @
+
+  class SAT.citaAgendarConfirmacionView extends Backbone.AnimView
+    el: '#app'
+    template: _.template $('#tmpl-cita-agendar-confirmacion').html()
+    render: ->
+      @$el.html @template
+      @
+
   ### Router ###
   class SAT.Router extends Backbone.Router
     routes:
       '': 'index'
       'login': 'login'
       'citas': 'citas'
+      'citas/agendar': 'citas_agendar'
+      'citas/agendar/lugares': 'citas_agendar_lugares'
+      'citas/agendar/confirmar': 'citas_agendar_confirmar'
+      'citas/agendar/confirmacion': 'citas_agendar_confirmacion'
+      'citas/:id': 'citas'
       'pagos': 'pagos'
       'feedback': 'feedback'
       'herramientas': 'herramientas'
@@ -195,6 +248,18 @@ $ ->
     citas: ->
       view = new SAT.citasView
       view.render()
+    citas_agendar: ->
+      view = new SAT.citaAgendarView
+      view.render()
+    citas_agendar_lugares: ->
+      view = new SAT.citaAgendarLugaresView
+      view.render()
+    citas_agendar_confirmar: ->
+      view = new SAT.citaAgendarConfirmarView
+      view.render()
+    citas_agendar_confirmacion: ->
+      view = new SAT.citaAgendarConfirmacionView
+      view.render()
     pagos: ->
       view = new SAT.pagosView(pagos: pagos)
       view.render()
@@ -208,7 +273,6 @@ $ ->
       view = new SAT.ayudaView
       view.render()
 
-  # Set-up
   SAT.history = new SAT.historyModel
 
   header = new SAT.headerView(history: SAT.history)
@@ -242,3 +306,6 @@ $ ->
   router = new SAT.Router
   Backbone.history.start()
 
+  $(document).on 'change', ' input.full-select', (e)->
+    $(this).closest('ul').find('li').addClass('was-full-selected').removeClass 'full-selected'
+    $(this).closest('li').removeClass('was-full-selected').addClass 'full-selected'

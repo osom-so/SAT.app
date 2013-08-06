@@ -3,7 +3,7 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   $(function() {
-    var header, pagos, prefixes, router, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+    var header, pagos, prefixes, router, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
     window.SAT = {
       isLogged: true,
       goBack: false,
@@ -281,6 +281,15 @@
 
       citasView.prototype.template = _.template($('#tmpl-citas').html());
 
+      citasView.prototype.events = {
+        'click a': 'evt_menuitem'
+      };
+
+      citasView.prototype.evt_menuitem = function(e) {
+        e.preventDefault();
+        return router.navigate($(e.currentTarget).attr('href'), true);
+      };
+
       citasView.prototype.render = function() {
         this.$el.html(this.template);
         return this;
@@ -402,20 +411,132 @@
       return ayudaView;
 
     })(Backbone.AnimView);
+    SAT.citaAgendarView = (function(_super) {
+      __extends(citaAgendarView, _super);
+
+      function citaAgendarView() {
+        _ref13 = citaAgendarView.__super__.constructor.apply(this, arguments);
+        return _ref13;
+      }
+
+      citaAgendarView.prototype.el = '#app';
+
+      citaAgendarView.prototype.template = _.template($('#tmpl-cita-agendar').html());
+
+      citaAgendarView.prototype.events = {
+        'submit form': 'evt_submit'
+      };
+
+      citaAgendarView.prototype.evt_submit = function(e) {
+        e.preventDefault();
+        return router.navigate($(e.currentTarget).attr('action'), true);
+      };
+
+      citaAgendarView.prototype.render = function() {
+        this.$el.html(this.template);
+        return this;
+      };
+
+      return citaAgendarView;
+
+    })(Backbone.AnimView);
+    SAT.citaAgendarLugaresView = (function(_super) {
+      __extends(citaAgendarLugaresView, _super);
+
+      function citaAgendarLugaresView() {
+        _ref14 = citaAgendarLugaresView.__super__.constructor.apply(this, arguments);
+        return _ref14;
+      }
+
+      citaAgendarLugaresView.prototype.el = '#app';
+
+      citaAgendarLugaresView.prototype.template = _.template($('#tmpl-cita-agendar-lugares').html());
+
+      citaAgendarLugaresView.prototype.events = {
+        'submit form': 'evt_submit'
+      };
+
+      citaAgendarLugaresView.prototype.evt_submit = function(e) {
+        e.preventDefault();
+        return router.navigate($(e.currentTarget).attr('action'), true);
+      };
+
+      citaAgendarLugaresView.prototype.render = function() {
+        this.$el.html(this.template);
+        return this;
+      };
+
+      return citaAgendarLugaresView;
+
+    })(Backbone.AnimView);
+    SAT.citaAgendarConfirmarView = (function(_super) {
+      __extends(citaAgendarConfirmarView, _super);
+
+      function citaAgendarConfirmarView() {
+        _ref15 = citaAgendarConfirmarView.__super__.constructor.apply(this, arguments);
+        return _ref15;
+      }
+
+      citaAgendarConfirmarView.prototype.el = '#app';
+
+      citaAgendarConfirmarView.prototype.template = _.template($('#tmpl-cita-agendar-confirmar').html());
+
+      citaAgendarConfirmarView.prototype.events = {
+        'submit form': 'evt_submit'
+      };
+
+      citaAgendarConfirmarView.prototype.evt_submit = function(e) {
+        e.preventDefault();
+        return router.navigate($(e.currentTarget).attr('action'), true);
+      };
+
+      citaAgendarConfirmarView.prototype.render = function() {
+        this.$el.html(this.template);
+        return this;
+      };
+
+      return citaAgendarConfirmarView;
+
+    })(Backbone.AnimView);
+    SAT.citaAgendarConfirmacionView = (function(_super) {
+      __extends(citaAgendarConfirmacionView, _super);
+
+      function citaAgendarConfirmacionView() {
+        _ref16 = citaAgendarConfirmacionView.__super__.constructor.apply(this, arguments);
+        return _ref16;
+      }
+
+      citaAgendarConfirmacionView.prototype.el = '#app';
+
+      citaAgendarConfirmacionView.prototype.template = _.template($('#tmpl-cita-agendar-confirmacion').html());
+
+      citaAgendarConfirmacionView.prototype.render = function() {
+        this.$el.html(this.template);
+        return this;
+      };
+
+      return citaAgendarConfirmacionView;
+
+    })(Backbone.AnimView);
     /* Router*/
 
     SAT.Router = (function(_super) {
       __extends(Router, _super);
 
       function Router() {
-        _ref13 = Router.__super__.constructor.apply(this, arguments);
-        return _ref13;
+        _ref17 = Router.__super__.constructor.apply(this, arguments);
+        return _ref17;
       }
 
       Router.prototype.routes = {
         '': 'index',
         'login': 'login',
         'citas': 'citas',
+        'citas/agendar': 'citas_agendar',
+        'citas/agendar/lugares': 'citas_agendar_lugares',
+        'citas/agendar/confirmar': 'citas_agendar_confirmar',
+        'citas/agendar/confirmacion': 'citas_agendar_confirmacion',
+        'citas/:id': 'citas',
         'pagos': 'pagos',
         'feedback': 'feedback',
         'herramientas': 'herramientas',
@@ -440,6 +561,30 @@
       Router.prototype.citas = function() {
         var view;
         view = new SAT.citasView;
+        return view.render();
+      };
+
+      Router.prototype.citas_agendar = function() {
+        var view;
+        view = new SAT.citaAgendarView;
+        return view.render();
+      };
+
+      Router.prototype.citas_agendar_lugares = function() {
+        var view;
+        view = new SAT.citaAgendarLugaresView;
+        return view.render();
+      };
+
+      Router.prototype.citas_agendar_confirmar = function() {
+        var view;
+        view = new SAT.citaAgendarConfirmarView;
+        return view.render();
+      };
+
+      Router.prototype.citas_agendar_confirmacion = function() {
+        var view;
+        view = new SAT.citaAgendarConfirmacionView;
         return view.render();
       };
 
@@ -502,7 +647,11 @@
       }
     ]);
     router = new SAT.Router;
-    return Backbone.history.start();
+    Backbone.history.start();
+    return $(document).on('change', ' input.full-select', function(e) {
+      $(this).closest('ul').find('li').addClass('was-full-selected').removeClass('full-selected');
+      return $(this).closest('li').removeClass('was-full-selected').addClass('full-selected');
+    });
   });
 
 }).call(this);

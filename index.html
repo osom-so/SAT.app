@@ -55,6 +55,155 @@ Contraseña:<br>
 <div class="wrap">
 <h2 class="titulo">Citas</h2>
 </div>
+<ul class="touch-list">
+<li><a href="/citas/agendar">Agendar cita</a></li>
+<li><a href="/citas/modulos">Módulos de atención</a></li>
+<li><a href="/citas/preguntas-frecuentes">Preguntas frecuentes</a></li>
+</ul>
+</script>
+<script type="text/template" id="tmpl-cita-agendar">
+<div class="wrap">
+<h2>Agendar Cita</h2>
+<h4>¿En qué te podemos ayudar?</h4>
+</div>
+<form action="/citas/agendar/lugares">
+<ul class="touch-list">
+<li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  Orientación Fiscal
+  <div class="full-select-extra-info"><small>Asesoría y consultoría en temas de impuestos, retenciones, devoluciones y preguntas.</small></div>
+</label></li>
+<li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  Actualizaciones y servicios al RFC
+  <div class="full-select-extra-info"><small>Cambio de domicilio, actualización y estado actual del contribuyente.</small></div>
+</label></li>
+<li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  Devoluciones y Compensaciones
+  <div class="full-select-extra-info"><small>Trámites de retornos y compensaciones tributarios.</small></div>
+</label></li>
+<li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  Declaraciones
+  <div class="full-select-extra-info"><small>Envío, recepción y asesoría en declaraciones de impuestos.</small></div>
+</label></li>
+<li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  Cobranza
+  <div class="full-select-extra-info"><small>Asesoría financiera de cobranza tributaria.</small></div>
+</label></li>
+<li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  Atención de Requerimientos
+  <div class="full-select-extra-info"><small>Atención para aquellos contribuyentes que han recibido un requerimiento.</small></div>
+</label></li>
+<li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  Regularización de Obligaciones
+  <div class="full-select-extra-info"><small>El SAT te da la oportunidad de ponerse al corriente con tus obligaciones fiscales.</small></div>
+</label></li>
+<li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  FIEL
+  <div class="full-select-extra-info"><small>Trámites relacionados a la Firma Electrónica Avanzada.</small></div>
+</label></li>
+</ul>
+<div class="wrap">
+<input type="submit" class="inputsubmit block" value="Siguiente">
+</div>
+</form>
+</script>
+<script type="text/template" id="tmpl-cita-agendar-lugares">
+<div id="seccion-cita-lugares">
+<div class="wrap">
+<h2>Agendar Cita</h2>
+<h4>Encontramos <strong>3</strong> lugares</h4>
+</div>
+<form action="/citas/agendar/confirmar">
+<ul class="touch-list">
+<li class="fecha"><div class="wrap">Miércoles, 21 de Agosto, 2013</div></li>
+<li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  <div class="table">
+    <div class="tcell t70">
+      <strong class="lugar">Centro Nacional de Consulta</strong><br><small>a 3 kilómetros</small><br>
+    </div>
+    <div class="tcell t30 middle ctr">
+      <big class="big nowrap">10:00 a.m.</big>
+      <small class="rel-days">Dentro de 10 días</small>
+    </div>
+  </div>
+</label></li>
+<li class="fecha"><div class="wrap">Jueves, 22 de Agosto, 2013</div></li>
+<li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  <div class="table">
+    <div class="tcell t70">
+      <strong>Norte D.F.</strong><br><small>a 8.3 kilómetros</small><br>
+    </div>
+    <div class="tcell t30 middle ctr">
+      <big class="big nowrap">11:15 a.m.</big>
+      <small class="rel-days">Dentro de 11 días</small>
+    </div>
+  </div>
+</label></li>
+<li class="fecha"><div class="wrap">Martes, 20 de Agosto, 2013</div></li>
+<li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  <div class="table">
+    <div class="tcell t70">
+      <strong>Xochimilco</strong><br><small>a 9.5 kilómetros</small><br>
+    </div>
+    <div class="tcell t30 middle ctr">
+      <big class="big nowrap">9:35 a.m.</big>
+      <small class="rel-days">Dentro de 9 días</small>
+    </div>
+  </div>
+</label></li>
+</ul>
+<div class="wrap">
+<input type="submit" class="inputsubmit block" value="Siguiente">
+</div>
+</form>
+</div>
+</script>
+<script type="text/template" id="tmpl-cita-agendar-confirmar">
+<div class="wrap">
+<h2 class="titulo">Confirmar cita</h2>
+<p>
+  Favor de revisar la información, su cita no será registrada hasta que presione <strong>confirmar</strong>.
+</p>
+<div class="table">
+  <div class="tcell t30">Servicio:</div>
+  <div class="tcell t70"><strong>Orientación Fiscal</strong></div>
+</div>
+<div class="table">
+  <div class="tcell t30">Lugar:</div>
+  <div class="tcell t70"><strong>Centro Nacional de Consulta</strong></div>
+</div>
+<div class="table">
+  <div class="tcell t30">Fecha:</div>
+  <div class="tcell t70"><strong>Miércoles, 21 de Agosto de 2013</strong></div>
+</div>
+<div class="table">
+  <div class="tcell t30">Hora:</div>
+  <div class="tcell t70"><strong>10:00 a.m.</strong></div>
+</div>
+<p class="ctr">
+  <img src="/img/mapa.png">
+</p>
+<p class="ctr">
+  <big>¿Es correcta esta información?</big>
+</p>
+<form action="/citas/agendar/confirmacion">
+<input type="submit" class="inputsubmit block" value="Confirmar">
+</form>
+</div>
+</script>
+<script type="text/template" id="tmpl-cita-agendar-confirmacion">
+<div class="wrap">
+<h2 class="titulo">Cita confirmada</h2>
+<div class="table">
+  <div class="tcell t35">Número de cita:</div>
+  <div class="tcell t65"><strong>22304823</strong></div>
+</div>
+<p>
+  Te recordamos que 72 horas antes de la cita, se te enviará un recordatorio de su cita, mismo que debes de confirmar haciendo click en el enlace adjunto.
+</p>
+<p>
+  De no ser confirmada, tu cita se perderá y se liberará para alguien más.
+</p>
+</div>
 </script>
 <script type="text/template" id="tmpl-pagos">
 <div class="wrap">

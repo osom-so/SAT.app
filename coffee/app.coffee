@@ -119,7 +119,35 @@ $ ->
     el: '#app'
     template: _.template $('#tmpl-citas').html()
     render: ->
-      @$el.html @template(url: window.location.hash)
+      @$el.html @template
+      @
+
+  class SAT.pagosView extends Backbone.AnimView
+    el: '#app'
+    template: _.template $('#tmpl-pagos').html()
+    render: ->
+      @$el.html @template
+      @
+
+  class SAT.feedbackView extends Backbone.AnimView
+    el: '#app'
+    template: _.template $('#tmpl-feedback').html()
+    render: ->
+      @$el.html @template
+      @
+
+  class SAT.herramientasView extends Backbone.AnimView
+    el: '#app'
+    template: _.template $('#tmpl-herramientas').html()
+    render: ->
+      @$el.html @template
+      @
+
+  class SAT.ayudaView extends Backbone.AnimView
+    el: '#app'
+    template: _.template $('#tmpl-ayuda').html()
+    render: ->
+      @$el.html @template
       @
 
   ### Router ###
@@ -128,21 +156,32 @@ $ ->
       '': 'index'
       'login': 'login'
       'citas': 'citas'
-      'pagos': 'citas'
-      'notificaciones': 'citas'
-      'ayuda': 'citas'
+      'pagos': 'pagos'
+      'feedback': 'feedback'
+      'herramientas': 'herramientas'
+      'ayuda': 'ayuda'
     index: ->
       return @navigate 'login', true unless SAT.isLogged
       indexview = new SAT.indexView
       indexview.render()
-
     login: ->
-      loginview = new SAT.loginView
-      loginview.render()
-
+      view = new SAT.loginView
+      view.render()
     citas: ->
-      citasview = new SAT.citasView
-      citasview.render()
+      view = new SAT.citasView
+      view.render()
+    pagos: ->
+      view = new SAT.pagosView
+      view.render()
+    feedback: ->
+      view = new SAT.feedbackView
+      view.render()
+    herramientas: ->
+      view = new SAT.herramientasView
+      view.render()
+    ayuda: ->
+      view = new SAT.ayudaView
+      view.render()
 
   SAT.history = new SAT.historyModel
 

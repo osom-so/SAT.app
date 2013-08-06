@@ -3,7 +3,7 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   $(function() {
-    var header, router, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6;
+    var header, router, _ref, _ref1, _ref10, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
     window.SAT = {};
     SAT.isLogged = false;
     SAT.goBack = false;
@@ -241,13 +241,91 @@
       citasView.prototype.template = _.template($('#tmpl-citas').html());
 
       citasView.prototype.render = function() {
-        this.$el.html(this.template({
-          url: window.location.hash
-        }));
+        this.$el.html(this.template);
         return this;
       };
 
       return citasView;
+
+    })(Backbone.AnimView);
+    SAT.pagosView = (function(_super) {
+      __extends(pagosView, _super);
+
+      function pagosView() {
+        _ref6 = pagosView.__super__.constructor.apply(this, arguments);
+        return _ref6;
+      }
+
+      pagosView.prototype.el = '#app';
+
+      pagosView.prototype.template = _.template($('#tmpl-pagos').html());
+
+      pagosView.prototype.render = function() {
+        this.$el.html(this.template);
+        return this;
+      };
+
+      return pagosView;
+
+    })(Backbone.AnimView);
+    SAT.feedbackView = (function(_super) {
+      __extends(feedbackView, _super);
+
+      function feedbackView() {
+        _ref7 = feedbackView.__super__.constructor.apply(this, arguments);
+        return _ref7;
+      }
+
+      feedbackView.prototype.el = '#app';
+
+      feedbackView.prototype.template = _.template($('#tmpl-feedback').html());
+
+      feedbackView.prototype.render = function() {
+        this.$el.html(this.template);
+        return this;
+      };
+
+      return feedbackView;
+
+    })(Backbone.AnimView);
+    SAT.herramientasView = (function(_super) {
+      __extends(herramientasView, _super);
+
+      function herramientasView() {
+        _ref8 = herramientasView.__super__.constructor.apply(this, arguments);
+        return _ref8;
+      }
+
+      herramientasView.prototype.el = '#app';
+
+      herramientasView.prototype.template = _.template($('#tmpl-herramientas').html());
+
+      herramientasView.prototype.render = function() {
+        this.$el.html(this.template);
+        return this;
+      };
+
+      return herramientasView;
+
+    })(Backbone.AnimView);
+    SAT.ayudaView = (function(_super) {
+      __extends(ayudaView, _super);
+
+      function ayudaView() {
+        _ref9 = ayudaView.__super__.constructor.apply(this, arguments);
+        return _ref9;
+      }
+
+      ayudaView.prototype.el = '#app';
+
+      ayudaView.prototype.template = _.template($('#tmpl-ayuda').html());
+
+      ayudaView.prototype.render = function() {
+        this.$el.html(this.template);
+        return this;
+      };
+
+      return ayudaView;
 
     })(Backbone.AnimView);
     /* Router*/
@@ -256,17 +334,18 @@
       __extends(Router, _super);
 
       function Router() {
-        _ref6 = Router.__super__.constructor.apply(this, arguments);
-        return _ref6;
+        _ref10 = Router.__super__.constructor.apply(this, arguments);
+        return _ref10;
       }
 
       Router.prototype.routes = {
         '': 'index',
         'login': 'login',
         'citas': 'citas',
-        'pagos': 'citas',
-        'notificaciones': 'citas',
-        'ayuda': 'citas'
+        'pagos': 'pagos',
+        'feedback': 'feedback',
+        'herramientas': 'herramientas',
+        'ayuda': 'ayuda'
       };
 
       Router.prototype.index = function() {
@@ -279,15 +358,39 @@
       };
 
       Router.prototype.login = function() {
-        var loginview;
-        loginview = new SAT.loginView;
-        return loginview.render();
+        var view;
+        view = new SAT.loginView;
+        return view.render();
       };
 
       Router.prototype.citas = function() {
-        var citasview;
-        citasview = new SAT.citasView;
-        return citasview.render();
+        var view;
+        view = new SAT.citasView;
+        return view.render();
+      };
+
+      Router.prototype.pagos = function() {
+        var view;
+        view = new SAT.pagosView;
+        return view.render();
+      };
+
+      Router.prototype.feedback = function() {
+        var view;
+        view = new SAT.feedbackView;
+        return view.render();
+      };
+
+      Router.prototype.herramientas = function() {
+        var view;
+        view = new SAT.herramientasView;
+        return view.render();
+      };
+
+      Router.prototype.ayuda = function() {
+        var view;
+        view = new SAT.ayudaView;
+        return view.render();
       };
 
       return Router;

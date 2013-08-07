@@ -64,7 +64,12 @@ $ ->
       @set 'history', history
       @trigger 'history:change', @
 
+  class SAT.pagoModel extends Backbone.Model
+
   ### Collections ###
+  class SAT.pagosCollection extends Backbone.Collection
+    model: SAT.pagoModel
+
   ### Views ###
   class SAT.headerView extends Backbone.View
     el: '#app-header'
@@ -132,8 +137,21 @@ $ ->
   class SAT.pagosView extends Backbone.AnimView
     el: '#app'
     template: _.template $('#tmpl-pagos').html()
+    initialize: (ini)->
+      @pagos = ini.pagos
     render: ->
+      view = @
       @$el.html @template
+      @pagos.each (pago)->
+        el = new SAT.pagoEl
+        view.$el.find("#pagos-list").append el.render(pago).el
+      @
+
+  class SAT.pagoEl extends Backbone.View
+    template: _.template $('#tmpl-pago-el').html()
+    tagName: 'li'
+    render: (pago)->
+      @$el.addClass("st-#{pago.get('status')}").html @template(pago:pago)
       @
 
   class SAT.feedbackView extends Backbone.AnimView
@@ -178,7 +196,7 @@ $ ->
       view = new SAT.citasView
       view.render()
     pagos: ->
-      view = new SAT.pagosView
+      view = new SAT.pagosView(pagos: pagos)
       view.render()
     feedback: ->
       view = new SAT.feedbackView
@@ -190,10 +208,37 @@ $ ->
       view = new SAT.ayudaView
       view.render()
 
+  # Set-up
   SAT.history = new SAT.historyModel
 
   header = new SAT.headerView(history: SAT.history)
   header.render()
 
+  # Models & Stuff
+  pagos = new SAT.pagosCollection
+  pagos.add [
+    id: 50713885
+    status: 'pagado'
+    fecha: '15 de Marzo 2013'
+    importe: '$1,438.00'
+  ,
+    id: 52686212
+    status: 'pagado'
+    fecha: '17 de Abril 2013'
+    importe: '$11,348.00'
+  ,
+    id: 54599274
+    status: 'pendiente'
+    fecha: '17 de Mayo 2013'
+    importe: '$30,022.00'
+  ,
+    id: 26228503
+    status: 'error'
+    fecha: '12 de Junio 2013'
+    importe: '$100,123.00'
+  ]
+
+  # Start 
   router = new SAT.Router
   Backbone.history.start()
+

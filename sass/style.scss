@@ -8,6 +8,11 @@ body{
   font: 100%/1.15 Helvetica, sans-serif;
 }
 
+a{
+  color: $blue-dark;
+  text-decoration: none;
+}
+
 header#app-header{
   position: fixed;
   z-index: 300;
@@ -15,9 +20,9 @@ header#app-header{
   top: 0;
   left: 0;
   right: 0;
-  background: #fff;
   min-height: 44px;
   border-bottom: 1px solid #ccc;
+  background-image: linear-gradient(#F6F7F6 50%, #EEF0EE 50%);
   span.logo{
     position: absolute;
     top: 5px;
@@ -39,9 +44,9 @@ header#app-header{
     text-align: center;
     color: #fff;
     text-decoration: none;
-    background: rgba(#000, 0.3);
     @include transition(left 0.33s);
     &.back{
+      background-image: linear-gradient(#78A3D0 50%, #749ECA 50%);
       left: -44px;
     }
     &.help{

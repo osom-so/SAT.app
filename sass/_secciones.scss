@@ -2,6 +2,54 @@
 @import 'include';
 
 // Genérico
+.table{
+  display: table;
+  width: 100%;
+  &.padded{
+    > .tcell{
+      padding: 10px 5px;
+      &:first-child{
+        padding-left: 10px;
+      }
+      &:last-child{
+        padding-right: 10px;
+      }
+    }
+  }
+  > .tcell{
+    display: table-cell;
+    &.top{
+      vertical-align: top;
+    }
+    &.middle{
+      vertical-align: middle;
+    }
+    &.bottom{
+      vertical-align: bottom;
+    }
+
+    @for $i from 1 through 100{
+      &.t#{$i}{
+        width: #{$i#{unquote("%")}}; 
+      }
+    }
+  }
+  &.top{
+    > .tcell{
+      vertical-align: top;
+    }
+  }
+  &.middle{
+    > .tcell{
+      vertical-align: middle;
+    }
+  }
+  &.bottom{
+    > .tcell{
+      vertical-align: bottom;
+    }
+  }
+}
 .ctr{
   text-align: center;
 }
@@ -20,12 +68,53 @@ ul.touch-list{
   margin: 0;
   padding: 0;
   > li{
-    a{
-      background: rgba(#fff, .5);
+    a, .el{
       padding: 10px 10px;
       display: block;
     }
+    a.no-el{
+      padding: 0;
+    }
   }
+  &.with-border{
+    > li{
+      border-bottom: 1px solid #eee;
+    }
+  }
+}
+
+big{
+  font-size: 1.15rem;
+  &.big{
+    font-size: 1.65rem;
+  }
+}
+
+// Colores
+.blue-darker{
+  color: $blue-darker;
+  &.bg{
+    background: $blue-darker;
+    color: $blue-light;
+  }
+}
+
+.blue-light{
+  color: $blue-light;
+}
+
+.grey{
+  color: $grey;
+}
+
+.bg-blue{
+  background: $bg-blue;
+}
+.bg-white{
+  background: $bg-white;
+}
+.bg-grey{
+  background: $bg-grey;
 }
 
 // Forma

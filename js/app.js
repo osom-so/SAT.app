@@ -3,7 +3,7 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   $(function() {
-    var header, prefixes, router, _ref, _ref1, _ref10, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+    var header, pagos, prefixes, router, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
     window.SAT = {
       isLogged: true,
       goBack: false,
@@ -122,16 +122,40 @@
       return historyModel;
 
     })(Backbone.Model);
+    SAT.pagoModel = (function(_super) {
+      __extends(pagoModel, _super);
+
+      function pagoModel() {
+        _ref2 = pagoModel.__super__.constructor.apply(this, arguments);
+        return _ref2;
+      }
+
+      return pagoModel;
+
+    })(Backbone.Model);
     /* Collections*/
 
+    SAT.pagosCollection = (function(_super) {
+      __extends(pagosCollection, _super);
+
+      function pagosCollection() {
+        _ref3 = pagosCollection.__super__.constructor.apply(this, arguments);
+        return _ref3;
+      }
+
+      pagosCollection.prototype.model = SAT.pagoModel;
+
+      return pagosCollection;
+
+    })(Backbone.Collection);
     /* Views*/
 
     SAT.headerView = (function(_super) {
       __extends(headerView, _super);
 
       function headerView() {
-        _ref2 = headerView.__super__.constructor.apply(this, arguments);
-        return _ref2;
+        _ref4 = headerView.__super__.constructor.apply(this, arguments);
+        return _ref4;
       }
 
       headerView.prototype.el = '#app-header';
@@ -184,8 +208,8 @@
       __extends(loginView, _super);
 
       function loginView() {
-        _ref3 = loginView.__super__.constructor.apply(this, arguments);
-        return _ref3;
+        _ref5 = loginView.__super__.constructor.apply(this, arguments);
+        return _ref5;
       }
 
       loginView.prototype.el = '#app';
@@ -220,8 +244,8 @@
       __extends(indexView, _super);
 
       function indexView() {
-        _ref4 = indexView.__super__.constructor.apply(this, arguments);
-        return _ref4;
+        _ref6 = indexView.__super__.constructor.apply(this, arguments);
+        return _ref6;
       }
 
       indexView.prototype.el = '#app';
@@ -249,8 +273,8 @@
       __extends(citasView, _super);
 
       function citasView() {
-        _ref5 = citasView.__super__.constructor.apply(this, arguments);
-        return _ref5;
+        _ref7 = citasView.__super__.constructor.apply(this, arguments);
+        return _ref7;
       }
 
       citasView.prototype.el = '#app';
@@ -269,28 +293,61 @@
       __extends(pagosView, _super);
 
       function pagosView() {
-        _ref6 = pagosView.__super__.constructor.apply(this, arguments);
-        return _ref6;
+        _ref8 = pagosView.__super__.constructor.apply(this, arguments);
+        return _ref8;
       }
 
       pagosView.prototype.el = '#app';
 
       pagosView.prototype.template = _.template($('#tmpl-pagos').html());
 
+      pagosView.prototype.initialize = function(ini) {
+        return this.pagos = ini.pagos;
+      };
+
       pagosView.prototype.render = function() {
+        var view;
+        view = this;
         this.$el.html(this.template);
+        this.pagos.each(function(pago) {
+          var el;
+          el = new SAT.pagoEl;
+          return view.$el.find("#pagos-list").append(el.render(pago).el);
+        });
         return this;
       };
 
       return pagosView;
 
     })(Backbone.AnimView);
+    SAT.pagoEl = (function(_super) {
+      __extends(pagoEl, _super);
+
+      function pagoEl() {
+        _ref9 = pagoEl.__super__.constructor.apply(this, arguments);
+        return _ref9;
+      }
+
+      pagoEl.prototype.template = _.template($('#tmpl-pago-el').html());
+
+      pagoEl.prototype.tagName = 'li';
+
+      pagoEl.prototype.render = function(pago) {
+        this.$el.addClass("st-" + (pago.get('status'))).html(this.template({
+          pago: pago
+        }));
+        return this;
+      };
+
+      return pagoEl;
+
+    })(Backbone.View);
     SAT.feedbackView = (function(_super) {
       __extends(feedbackView, _super);
 
       function feedbackView() {
-        _ref7 = feedbackView.__super__.constructor.apply(this, arguments);
-        return _ref7;
+        _ref10 = feedbackView.__super__.constructor.apply(this, arguments);
+        return _ref10;
       }
 
       feedbackView.prototype.el = '#app';
@@ -309,8 +366,8 @@
       __extends(herramientasView, _super);
 
       function herramientasView() {
-        _ref8 = herramientasView.__super__.constructor.apply(this, arguments);
-        return _ref8;
+        _ref11 = herramientasView.__super__.constructor.apply(this, arguments);
+        return _ref11;
       }
 
       herramientasView.prototype.el = '#app';
@@ -329,8 +386,8 @@
       __extends(ayudaView, _super);
 
       function ayudaView() {
-        _ref9 = ayudaView.__super__.constructor.apply(this, arguments);
-        return _ref9;
+        _ref12 = ayudaView.__super__.constructor.apply(this, arguments);
+        return _ref12;
       }
 
       ayudaView.prototype.el = '#app';
@@ -351,8 +408,8 @@
       __extends(Router, _super);
 
       function Router() {
-        _ref10 = Router.__super__.constructor.apply(this, arguments);
-        return _ref10;
+        _ref13 = Router.__super__.constructor.apply(this, arguments);
+        return _ref13;
       }
 
       Router.prototype.routes = {
@@ -388,7 +445,9 @@
 
       Router.prototype.pagos = function() {
         var view;
-        view = new SAT.pagosView;
+        view = new SAT.pagosView({
+          pagos: pagos
+        });
         return view.render();
       };
 
@@ -418,6 +477,30 @@
       history: SAT.history
     });
     header.render();
+    pagos = new SAT.pagosCollection;
+    pagos.add([
+      {
+        id: 50713885,
+        status: 'pagado',
+        fecha: '15 de Marzo 2013',
+        importe: '$1,438.00'
+      }, {
+        id: 52686212,
+        status: 'pagado',
+        fecha: '17 de Abril 2013',
+        importe: '$11,348.00'
+      }, {
+        id: 54599274,
+        status: 'pendiente',
+        fecha: '17 de Mayo 2013',
+        importe: '$30,022.00'
+      }, {
+        id: 26228503,
+        status: 'error',
+        fecha: '12 de Junio 2013',
+        importe: '$100,123.00'
+      }
+    ]);
     router = new SAT.Router;
     return Backbone.history.start();
   });

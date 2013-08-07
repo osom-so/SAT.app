@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import 'include';
 
 // Genérico
 .ctr{
@@ -28,7 +29,7 @@ ul.touch-list{
 }
 
 // Forma
-::-webkit-input-placeholder {
+@include input-placeholder{
   color: #999;
 }
 .inputtext, .inputsubmit{

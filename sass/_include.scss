@@ -1,0 +1,25 @@
+@import 'compass/css3/shared';
+@import 'compass/css3/transition';
+@import 'compass/css3/transform';
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin input-placeholder {
+  :-moz-placeholder { @content; }
+  ::-moz-placeholder { @content; }
+  :-ms-input-placeholder { @content; }
+  ::-webkit-input-placeholder { @content; } 
+}

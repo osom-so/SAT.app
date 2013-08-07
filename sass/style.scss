@@ -1,3 +1,5 @@
+@import 'include';
+
 body{
   color: #333;
   background: #eee;
@@ -24,7 +26,7 @@ header#app-header{
     width: 110px;
     background: url('/img/sat.png') no-repeat;
     background-size: auto 35px;
-    transition: left 0.33s;
+    @include transition(left 0.33s);
   }
   a.action{
     position: absolute;
@@ -38,7 +40,7 @@ header#app-header{
     color: #fff;
     text-decoration: none;
     background: rgba(#000, 0.3);
-    transition: left 0.33s;
+    @include transition(left 0.33s);
     &.back{
       left: -44px;
     }
@@ -80,54 +82,63 @@ header#app-header{
 
 .slide-in{
   z-index: 101;
-  -webkit-animation: slidein 0.4s;
+  @include experimental(animation, slidein 0.4s);
   &.slide-back{
-    -webkit-animation: slidein-back 0.4s;
-    -webkit-transform: translateX(0%);
+    @include experimental(animation, slidein-back 0.4s);
+    @include transform(translateX(0%));
   }
 }
 
 .slide-out{
   z-index: 100;
-  -webkit-animation: slideout 0.4s;
-  -webkit-transform: translateX(-100%);
+  @include experimental(animation, slideout 0.4s);
+  @include transform(translateX(-100%));
   &.slide-back{
-    -webkit-animation: slideout-back 0.4s;
-    -webkit-transform: translateX(100%);
+    @include experimental(animation, slideout-back 0.4s);
+    @include transform(translateX(100%));
   }
 }
 
-@-webkit-keyframes slideout{
+@include keyframes(slideout){
   0% {
-    -webkit-transform: translateX(0%);
+    @include transform(translateX(0%));
   }
   100% {
-    -webkit-transform: translateX(-100%);
-  }
-}
-@-webkit-keyframes slidein{
-  0% {
-    -webkit-transform: translateX(100%);
-  }
-  100% {
-    -webkit-transform: translateX(0%);
+    @include transform(translateX(100%));
   }
 }
 
-@-webkit-keyframes slideout-back{
+@include keyframes(slideout){
   0% {
-    -webkit-transform: translateX(0%);
+    @include transform(translateX(0%));
   }
   100% {
-    -webkit-transform: translateX(100%);
+    @include transform(translateX(-100%));
   }
 }
-@-webkit-keyframes slidein-back{
+@include keyframes(slidein){
   0% {
-    -webkit-transform: translateX(-100%);
+    @include transform(translateX(100%));
   }
   100% {
-    -webkit-transform: translateX(0%);
+    @include transform(translateX(0%));
+  }
+}
+
+@include keyframes(slideout-back){
+  0% {
+    @include transform(translateX(0%));
+  }
+  100% {
+    @include transform(translateX(100%));
+  }
+}
+@include keyframes(slidein-back){
+  0% {
+    @include transform(translateX(-100%));
+  }
+  100% {
+    @include transform(translateX(0%));
   }
 }
 

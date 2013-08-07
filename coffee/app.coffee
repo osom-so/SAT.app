@@ -1,18 +1,19 @@
 $ ->
-  window.SAT = {}
-  SAT.isLogged = false
-  SAT.goBack = false
-  SAT.currentView = 0
-  SAT.history = []
+  window.SAT = 
+    isLogged: on
+    goBack: off
+    currentView: 0
+    history: []
 
-  $('#app, #app2').bind 'webkitAnimationEnd', (e)->
+  prefixes = ['moz', 'webkit']
+  $('#app, #app2').bind "#{_.map(prefixes, (pfx)-> "#{pfx}AnimationEnd").join(' ')}", (e)->
     if ~['slideout', 'slideout-back'].indexOf e.originalEvent.animationName
       $out = $(@)
       $in = $("#app, #app2").filter(":not(##{$(@).attr('id')})")
       $out.empty()
       $in.css
         top: 0
-  .bind 'webkitAnimationStart', (e)->
+  .bind "#{_.map(prefixes, (pfx)-> "#{pfx}AnimationStart").join(' ')}", (e)->
     if ~['slidein', 'slidein-back'].indexOf e.originalEvent.animationName
       $in = $(@)
       $in.css
@@ -25,6 +26,7 @@ $ ->
       SAT.history.pop()
       SAT.goBack = true
     else
+      SAT.history.unshift '' if history.length is 0 and !~['login', ''].indexOf(@getFragment())
       SAT.history.push @getFragment()
 
   class Backbone.AnimView extends Backbone.View
@@ -46,6 +48,11 @@ $ ->
   class SAT.historyModel extends Backbone.Model
     defaults:
       history: []
+    unshift: (el)->
+      history = @get 'history'
+      history.unshift(el)
+      @set 'history', history
+      @trigger 'history:change', @
     pop: (el)->
       history = @get 'history'
       history.pop()

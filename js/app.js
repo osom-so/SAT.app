@@ -3,13 +3,17 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   $(function() {
-    var header, router, _ref, _ref1, _ref10, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
-    window.SAT = {};
-    SAT.isLogged = false;
-    SAT.goBack = false;
-    SAT.currentView = 0;
-    SAT.history = [];
-    $('#app, #app2').bind('webkitAnimationEnd', function(e) {
+    var header, prefixes, router, _ref, _ref1, _ref10, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+    window.SAT = {
+      isLogged: true,
+      goBack: false,
+      currentView: 0,
+      history: []
+    };
+    prefixes = ['moz', 'webkit'];
+    $('#app, #app2').bind("" + (_.map(prefixes, function(pfx) {
+      return "" + pfx + "AnimationEnd";
+    }).join(' ')), function(e) {
       var $in, $out;
       if (~['slideout', 'slideout-back'].indexOf(e.originalEvent.animationName)) {
         $out = $(this);
@@ -19,7 +23,9 @@
           top: 0
         });
       }
-    }).bind('webkitAnimationStart', function(e) {
+    }).bind("" + (_.map(prefixes, function(pfx) {
+      return "" + pfx + "AnimationStart";
+    }).join(' ')), function(e) {
       var $in;
       if (~['slidein', 'slidein-back'].indexOf(e.originalEvent.animationName)) {
         $in = $(this);
@@ -38,6 +44,9 @@
         SAT.history.pop();
         return SAT.goBack = true;
       } else {
+        if (history.length === 0 && !~['login', ''].indexOf(this.getFragment())) {
+          SAT.history.unshift('');
+        }
         return SAT.history.push(this.getFragment());
       }
     });
@@ -84,6 +93,14 @@
 
       historyModel.prototype.defaults = {
         history: []
+      };
+
+      historyModel.prototype.unshift = function(el) {
+        var history;
+        history = this.get('history');
+        history.unshift(el);
+        this.set('history', history);
+        return this.trigger('history:change', this);
       };
 
       historyModel.prototype.pop = function(el) {

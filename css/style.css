@@ -1312,3 +1312,10 @@ input, textarea {
 #seccion-calculadora table#resultado tr {
   height: 50px;
 }
+
+#seccion-404 .titulo {
+  background: #f00;
+}
+#seccion-404 .titulo:before {
+  background: #900;
+}

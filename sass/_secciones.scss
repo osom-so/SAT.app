@@ -356,3 +356,12 @@ input, textarea{
     }
   }
 }
+
+#seccion-404{
+  .titulo{
+    background: #f00;
+    &:before{
+      background: #900;
+    }
+  }
+}

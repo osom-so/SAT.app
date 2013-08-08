@@ -366,6 +366,15 @@
 
       feedbackView.prototype.template = _.template($('#tmpl-feedback').html());
 
+      feedbackView.prototype.events = {
+        'click a': 'evt_menuitem'
+      };
+
+      feedbackView.prototype.evt_menuitem = function(e) {
+        e.preventDefault();
+        return router.navigate($(e.currentTarget).attr('href'), true);
+      };
+
       feedbackView.prototype.render = function() {
         this.$el.html(this.template);
         return this;

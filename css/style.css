@@ -887,6 +887,9 @@ ul.touch-list > li a.no-el {
 ul.touch-list.with-border > li {
   border-bottom: 1px solid #eee;
 }
+ul.touch-list.big {
+  font-size: 1.2rem;
+}
 
 ul.zebra-list > li:nth-child(odd) {
   background: #F1F5FA;
@@ -930,6 +933,14 @@ ul.no-bullets {
 .icon.small {
   height: 30px;
   width: 30px;
+}
+
+.padded-bottom {
+  padding-bottom: 20px;
+}
+
+.padded-top {
+  padding-top: 20px;
 }
 
 .was-full-selected, .full-selected {

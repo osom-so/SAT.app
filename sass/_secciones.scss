@@ -88,6 +88,9 @@ ul.touch-list{
       border-bottom: 1px solid #eee;
     }
   }
+  &.big{
+    font-size: 1.2rem;
+  }
 }
 ul.zebra-list{
   > li{
@@ -140,6 +143,12 @@ ul.no-bullets{
   }
 }
 
+.padded-bottom{
+  padding-bottom: 20px;
+}
+.padded-top{
+  padding-top: 20px;
+}
 
 .was-full-selected, .full-selected{
   @include transition(background 0.3s);

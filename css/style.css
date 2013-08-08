@@ -69,6 +69,22 @@ header#app-header.has-history a.back {
 header#app-header.has-history span.logo {
   left: 61px;
 }
+header#app-header.notifications-open a.notif {
+  background: #f00;
+}
+header#app-header.notifications-open .notificaciones {
+  display: block;
+}
+header#app-header .notificaciones {
+  position: absolute;
+  right: 5px;
+  top: 100%;
+  background: #fff;
+  border: 2px solid #eee;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  min-width: 40%;
+  display: none;
+}
 
 #app-main {
   position: relative;
@@ -889,6 +905,15 @@ ul.has-icons > li .icon {
   left: 10px;
   top: 50%;
   margin-top: -20px;
+}
+
+ul.no-margin {
+  margin: 0;
+  padding: 0;
+}
+
+ul.no-bullets {
+  list-style: none;
 }
 
 .icon {

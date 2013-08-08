@@ -100,8 +100,10 @@ $ ->
       router.navigate history[-2..][0], true
     evt_notif: (e)->
       e.preventDefault()
+      $(e.currentTarget).closest('header').toggleClass 'notifications-open'
     evt_help: (e)->
       e.preventDefault()
+      router.navigate '/ayuda', true
     render: ->
       @$el.html @template
       @

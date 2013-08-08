@@ -200,11 +200,13 @@
       };
 
       headerView.prototype.evt_notif = function(e) {
-        return e.preventDefault();
+        e.preventDefault();
+        return $(e.currentTarget).closest('header').toggleClass('notifications-open');
       };
 
       headerView.prototype.evt_help = function(e) {
-        return e.preventDefault();
+        e.preventDefault();
+        return router.navigate('/ayuda', true);
       };
 
       headerView.prototype.render = function() {

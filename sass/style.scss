@@ -66,6 +66,24 @@ header#app-header{
       left: $header-height+6;
     }
   }
+  &.notifications-open{
+    a.notif{
+      background: #f00;
+    }
+    .notificaciones{
+      display: block;
+    }
+  }
+  .notificaciones{
+    position: absolute;
+    right: 5px;
+    top: 100%;
+    background: #fff;
+    border: 2px solid #eee;
+    box-shadow: 3px 3px 3px rgba(#000, .3);
+    min-width: 40%;
+    display: none;
+  }
 }
 
 #app-main{

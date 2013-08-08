@@ -1255,6 +1255,21 @@ input, textarea {
   display: block;
 }
 
+#seccion-home .bienvenida {
+  margin: 0;
+  padding: 30px 0;
+  color: #fff;
+  background: #110b14 url("/img/bienvenida.png") no-repeat top center;
+  background-size: 50% auto;
+}
+#seccion-home .seleccion-tramite {
+  font-size: 22px;
+  margin: 0;
+  padding: 15px 15px;
+  color: #fff;
+  background: #81ade0;
+}
+
 #seccion-cita-lugares li.fecha {
   padding: 5px 0;
   color: #fff;

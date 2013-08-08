@@ -1337,7 +1337,7 @@ ul.no-bullets {
 }
 
 .full-selected {
-  background: #1b2a40;
+  background: #1b2a40 !important;
   color: #fff;
 }
 .full-selected .full-select-extra-info {
@@ -1465,11 +1465,11 @@ input, textarea {
 }
 
 .inputsubmit {
-  padding: 0.45rem 0.65rem;
+  padding: 0.8rem 0.65rem;
   border: 0;
 }
 .inputsubmit.main {
-  background: #99f;
+  background: #1b2a40;
   color: #fff;
 }
 .inputsubmit.block {

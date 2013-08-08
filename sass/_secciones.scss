@@ -206,7 +206,7 @@ ul.no-bullets{
   @include transition(background 0.3s);
 }
 .full-selected{
-  background: $blue-dark;
+  background: $blue-dark !important;
   color: #fff;
   .full-select-extra-info{
     height: auto;
@@ -307,10 +307,10 @@ input, textarea{
   }
 }
 .inputsubmit{
-  padding: 0.45rem 0.65rem;
+  padding: 0.8rem 0.65rem;
   border: 0;
   &.main{
-    background: #99f;
+    background: $blue-dark;
     color: #fff;
   }
   &.block{

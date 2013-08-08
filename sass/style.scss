@@ -65,21 +65,53 @@ header#app-header{
   }
   &.notifications-open{
     a.notif{
-      background: #f00;
+      background: rgba($blue-light, .1);
     }
-    .notificaciones{
+    .notificaciones-cont{
       display: block;
     }
   }
-  .notificaciones{
+  .notificaciones-cont{
+    display: none;
     position: absolute;
     right: 5px;
     top: 100%;
+    margin-top: 15px;
+    &:after{
+      position: absolute;
+      top: -13px;
+      right: 50px;
+      z-index: 100;
+      content: '';
+      @include bg($layout, 'notif_tri');
+    }
+  }
+  .notificaciones{
     background: #fff;
-    border: 2px solid #eee;
-    box-shadow: 3px 3px 3px rgba(#000, .3);
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(#000, .1);
+    max-width: 270px;
     min-width: 40%;
-    display: none;
+    .notificacion{
+      .col-info{
+        padding: 7px 4px;
+      }
+      .mensaje{
+        font-weight: bold;
+        margin: 0;
+        padding: 0.25rem 0;
+        strong{
+          color: $blue-light;
+        }
+      }
+      &:first-child{
+        border-radius: 10px 10px 0 0;
+      }
+      &:last-child{
+        border-radius: 0 0 10px 10px;
+      }
+    }
   }
 }
 

@@ -159,10 +159,13 @@ ul.no-bullets{
 .icon-ui-next{ @include bg($layout, 'ui_next'); }
 .icon-ui-success{ @include bg($layout, 'ui_success'); }
 .icon-ui-warning{ @include bg($layout, 'ui_warning'); }
-
 .icon-error{ @include bg($layout, 'ui_error'); }
 .icon-pagado{ @include bg($layout, 'ui_success'); }
 .icon-pendiente{ @include bg($layout, 'ui_warning'); }
+.icon-notif-error{ @include bg($layout, 'notif_error'); }
+.icon-notif-success{ @include bg($layout, 'notif_success'); }
+.icon-notif-news{ @include bg($layout, 'notif_news'); }
+.icon-notif-warning{ @include bg($layout, 'notif_warning'); }
 
 .padded-bottom{
   padding-bottom: 20px;
@@ -250,6 +253,15 @@ big{
 
 .bg-blue{
   background: $bg-blue;
+}
+.bg-yellow{
+  background: $bg-yellow;
+}
+.bg-red{
+  background: $bg-red;
+}
+.bg-green{
+  background: $bg-green;
 }
 .bg-white{
   background: $bg-white;

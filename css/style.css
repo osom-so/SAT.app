@@ -32,12 +32,12 @@ header#app-header span.logo {
   -moz-transition: left 0.33s;
   -o-transition: left 0.33s;
   transition: left 0.33s;
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
+  background-image: url('/img/layout-sa6b467be5c.png');
   background-position: 0 0;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 84px;
   height: 28px;
 }
@@ -74,20 +74,57 @@ header#app-header.has-history span.logo {
   left: 50px;
 }
 header#app-header.notifications-open a.notif {
-  background: #f00;
+  background: rgba(129, 173, 224, 0.1);
 }
-header#app-header.notifications-open .notificaciones {
+header#app-header.notifications-open .notificaciones-cont {
   display: block;
 }
-header#app-header .notificaciones {
+header#app-header .notificaciones-cont {
+  display: none;
   position: absolute;
   right: 5px;
   top: 100%;
+  margin-top: 15px;
+}
+header#app-header .notificaciones-cont:after {
+  position: absolute;
+  top: -13px;
+  right: 50px;
+  z-index: 100;
+  content: '';
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -740px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
+  width: 27px;
+  height: 16.5px;
+}
+header#app-header .notificaciones {
   background: #fff;
-  border: 2px solid #eee;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  max-width: 270px;
   min-width: 40%;
-  display: none;
+}
+header#app-header .notificaciones .notificacion .col-info {
+  padding: 7px 4px;
+}
+header#app-header .notificaciones .notificacion .mensaje {
+  font-weight: bold;
+  margin: 0;
+  padding: 0.25rem 0;
+}
+header#app-header .notificaciones .notificacion .mensaje strong {
+  color: #81ade0;
+}
+header#app-header .notificaciones .notificacion:first-child {
+  border-radius: 10px 10px 0 0;
+}
+header#app-header .notificaciones .notificacion:last-child {
+  border-radius: 0 0 10px 10px;
 }
 
 #app-main {
@@ -930,278 +967,322 @@ ul.no-bullets {
 }
 
 .icon-header-back {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -677px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -839.5px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 17px;
   height: 16px;
 }
 
 .icon-header-help {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
+  background-image: url('/img/layout-sa6b467be5c.png');
   background-position: 0 -30px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 25.5px;
   height: 25.5px;
 }
 
 .icon-header-notif {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -57.5px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -93.5px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 24px;
   height: 27.5px;
 }
 
 .icon-home-cita {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -396px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -540px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 33px;
   height: 33px;
 }
 
 .icon-home-pagos {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -361px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -505px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 33px;
   height: 33px;
 }
 
 .icon-home-feedback {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -224.5px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -368.5px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 33px;
   height: 33px;
 }
 
 .icon-home-herramientas {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -87px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -231px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 33px;
   height: 33px;
 }
 
 .icon-home-ayuda {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -561px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -705px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 33px;
   height: 33px;
 }
 
 .icon-home-cita {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -396px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -540px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 33px;
   height: 33px;
 }
 
 .icon-citas-white {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -458.5px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -602.5px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 32.5px;
   height: 35.5px;
 }
 
 .icon-cita-white {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -639.5px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -802px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 32.5px;
   height: 35.5px;
 }
 
 .icon-pagos-white {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -259.5px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -403.5px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 32.5px;
   height: 35.5px;
 }
 
 .icon-feedback-white {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -297px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -441px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 32.5px;
   height: 35.5px;
 }
 
 .icon-herramientas-white {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -122px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -266px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 32.5px;
   height: 35.5px;
 }
 
 .icon-ayuda-white {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -496px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -640px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 32.5px;
   height: 35.5px;
 }
 
 .icon-ui-del {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -617.5px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -780px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 36px;
   height: 20px;
 }
 
 .icon-ui-dinero {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -596px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -758.5px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 12px;
   height: 19.5px;
 }
 
 .icon-ui-error {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -159.5px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -303.5px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 25.5px;
   height: 25.5px;
 }
 
 .icon-ui-info {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -334.5px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -478.5px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 24px;
   height: 24.5px;
 }
 
 .icon-ui-next {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -695px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -857.5px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 11.5px;
   height: 15px;
 }
 
 .icon-ui-success {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -431px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -575px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 25.5px;
   height: 25.5px;
 }
 
 .icon-ui-warning {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -533.5px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -677.5px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 25.5px;
   height: 25.5px;
 }
 
 .icon-error {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -159.5px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -303.5px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 25.5px;
   height: 25.5px;
 }
 
 .icon-pagado {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -431px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -575px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 25.5px;
   height: 25.5px;
 }
 
 .icon-pendiente {
-  background-image: url('/img/layout-s7fc2ce0f5d.png');
-  background-position: 0 -533.5px;
-  -webkit-background-size: 84px 710px;
-  -moz-background-size: 84px 710px;
-  -o-background-size: 84px 710px;
-  background-size: 84px 710px;
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -677.5px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
   width: 25.5px;
   height: 25.5px;
+}
+
+.icon-notif-error {
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -123px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
+  width: 37px;
+  height: 34px;
+}
+
+.icon-notif-success {
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -195px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
+  width: 37px;
+  height: 34px;
+}
+
+.icon-notif-news {
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -57.5px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
+  width: 37px;
+  height: 34px;
+}
+
+.icon-notif-warning {
+  background-image: url('/img/layout-sa6b467be5c.png');
+  background-position: 0 -159px;
+  -webkit-background-size: 84px 872px;
+  -moz-background-size: 84px 872px;
+  -o-background-size: 84px 872px;
+  background-size: 84px 872px;
+  width: 37px;
+  height: 34px;
 }
 
 .padded-bottom {
@@ -1296,6 +1377,18 @@ big.big {
 
 .bg-blue {
   background: #f1f5fa;
+}
+
+.bg-yellow {
+  background: #fffbe6;
+}
+
+.bg-red {
+  background: #fef0eb;
+}
+
+.bg-green {
+  background: #f4faf1;
 }
 
 .bg-white {

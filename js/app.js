@@ -440,6 +440,7 @@
 
       herramientasCalculadoraIsrView.prototype.events = {
         'submit form': 'evt_submit',
+        'blur .inputnumber': 'evt_submit',
         'click #periodo td': 'evt_cambiar_periodo'
       };
 

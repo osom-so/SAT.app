@@ -197,6 +197,7 @@ $ ->
     template: _.template $('#tmpl-herramientas-calculadora-isr').html()
     events:
       'submit form': 'evt_submit'
+      'blur .inputnumber': 'evt_submit'
       'click #periodo td': 'evt_cambiar_periodo'
     evt_submit: (e)->
       e.preventDefault()

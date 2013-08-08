@@ -45,8 +45,7 @@ header#app-header{
     text-decoration: none;
     @include transition(left 0.33s);
     &.back{
-      background: #78A3D0;
-      background: linear-gradient(#78A3D0 50%, #749ECA 50%);
+      background: rgba(#333, 0.2);
       left: -$header-height;
     }
     &.help{

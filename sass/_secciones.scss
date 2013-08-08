@@ -115,12 +115,12 @@ ul.zebra-list{
 ul.has-icons{
   > li{
     position: relative;
-    padding-left: 40px;
+    padding-left: 35px;
     .icon{
       position: absolute;
       left: 10px;
       top: 50%;
-      margin-top: -20px;
+      margin-top: -15px;
     }
   }
 }
@@ -136,18 +136,60 @@ ul.no-bullets{
   display: inline-block;
   height: 40px;
   width: 40px;
-  background: rgba($blue-light, 0.3);
+  // background: rgba($blue-light, 0.3);
   &.small{
     height: 30px;
     width: 30px;
   }
 }
+.icon-header-back{ @include bg($layout, 'header_back'); }
+.icon-header-help{ @include bg($layout, 'header_ayuda'); }
+.icon-header-notif{ @include bg($layout, 'header_notificacion'); }
+.icon-home-cita{ @include bg($layout, 'home_cita'); }
+.icon-home-pagos{  @include bg($layout, 'home_pagos'); }
+.icon-home-feedback{ @include bg($layout, 'home_feedback'); }
+.icon-home-herramientas{ @include bg($layout, 'home_herramientas'); }
+.icon-home-ayuda{  @include bg($layout, 'home_ayuda'); }
+.icon-home-cita{ @include bg($layout, 'home_cita'); }
+.icon-citas-white{ @include bg($layout, 'white_citas'); }
+.icon-cita-white{ @include bg($layout, 'white_cita'); }
+.icon-pagos-white{ @include bg($layout, 'white_pagos'); }
+.icon-feedback-white{ @include bg($layout, 'white_feedback'); }
+.icon-herramientas-white{ @include bg($layout, 'white_herramientas'); }
+.icon-ayuda-white{ @include bg($layout, 'white_ayuda'); }
 
 .padded-bottom{
   padding-bottom: 20px;
 }
 .padded-top{
   padding-top: 20px;
+}
+
+.titulo{
+  &.has-icon{
+    position: relative;
+    color: #fff;
+    margin: 0;
+    padding: 22px 0 22px $header-height+10;
+    background: $blue-light;
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: $header-height;
+      background: $blue-medium;
+    }
+    .icon{
+      position: absolute;
+      margin-top: -17.5px;
+      top: 50%;
+      left: 6px;
+      bottom: 0;
+    }
+  }
 }
 
 .was-full-selected, .full-selected{

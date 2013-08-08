@@ -3,7 +3,7 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   $(function() {
-    var header, pagos, prefixes, router, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+    var header, pagos, prefixes, router, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
     window.SAT = {
       isLogged: true,
       goBack: false,
@@ -176,7 +176,8 @@
       headerView.prototype.events = {
         'click a.back': 'evt_back',
         'click a.notif': 'evt_notif',
-        'click a.help': 'evt_help'
+        'click a.help': 'evt_help',
+        'click .notificacion a': 'evt_ver_notif'
       };
 
       headerView.prototype.initialize = function(ini) {
@@ -207,6 +208,11 @@
       headerView.prototype.evt_help = function(e) {
         e.preventDefault();
         return router.navigate('/ayuda', true);
+      };
+
+      headerView.prototype.evt_ver_notif = function(e) {
+        e.preventDefault();
+        return router.navigate('/notificacion/1', true);
       };
 
       headerView.prototype.render = function() {
@@ -251,12 +257,30 @@
       return loginView;
 
     })(Backbone.AnimView);
+    SAT.notificacionView = (function(_super) {
+      __extends(notificacionView, _super);
+
+      function notificacionView() {
+        _ref6 = notificacionView.__super__.constructor.apply(this, arguments);
+        return _ref6;
+      }
+
+      notificacionView.prototype.template = _.template($('#tmpl-notificacion').html());
+
+      notificacionView.prototype.render = function() {
+        this.$el.html(this.template);
+        return this;
+      };
+
+      return notificacionView;
+
+    })(Backbone.AnimView);
     SAT.indexView = (function(_super) {
       __extends(indexView, _super);
 
       function indexView() {
-        _ref6 = indexView.__super__.constructor.apply(this, arguments);
-        return _ref6;
+        _ref7 = indexView.__super__.constructor.apply(this, arguments);
+        return _ref7;
       }
 
       indexView.prototype.template = _.template($('#tmpl-index').html());
@@ -282,8 +306,8 @@
       __extends(citasView, _super);
 
       function citasView() {
-        _ref7 = citasView.__super__.constructor.apply(this, arguments);
-        return _ref7;
+        _ref8 = citasView.__super__.constructor.apply(this, arguments);
+        return _ref8;
       }
 
       citasView.prototype.template = _.template($('#tmpl-citas').html());
@@ -309,8 +333,8 @@
       __extends(pagosView, _super);
 
       function pagosView() {
-        _ref8 = pagosView.__super__.constructor.apply(this, arguments);
-        return _ref8;
+        _ref9 = pagosView.__super__.constructor.apply(this, arguments);
+        return _ref9;
       }
 
       pagosView.prototype.template = _.template($('#tmpl-pagos').html());
@@ -338,8 +362,8 @@
       __extends(pagoEl, _super);
 
       function pagoEl() {
-        _ref9 = pagoEl.__super__.constructor.apply(this, arguments);
-        return _ref9;
+        _ref10 = pagoEl.__super__.constructor.apply(this, arguments);
+        return _ref10;
       }
 
       pagoEl.prototype.template = _.template($('#tmpl-pago-el').html());
@@ -360,8 +384,8 @@
       __extends(feedbackView, _super);
 
       function feedbackView() {
-        _ref10 = feedbackView.__super__.constructor.apply(this, arguments);
-        return _ref10;
+        _ref11 = feedbackView.__super__.constructor.apply(this, arguments);
+        return _ref11;
       }
 
       feedbackView.prototype.template = _.template($('#tmpl-feedback').html());
@@ -387,8 +411,8 @@
       __extends(herramientasView, _super);
 
       function herramientasView() {
-        _ref11 = herramientasView.__super__.constructor.apply(this, arguments);
-        return _ref11;
+        _ref12 = herramientasView.__super__.constructor.apply(this, arguments);
+        return _ref12;
       }
 
       herramientasView.prototype.template = _.template($('#tmpl-herramientas').html());
@@ -414,8 +438,8 @@
       __extends(herramientasCalculadorasView, _super);
 
       function herramientasCalculadorasView() {
-        _ref12 = herramientasCalculadorasView.__super__.constructor.apply(this, arguments);
-        return _ref12;
+        _ref13 = herramientasCalculadorasView.__super__.constructor.apply(this, arguments);
+        return _ref13;
       }
 
       herramientasCalculadorasView.prototype.template = _.template($('#tmpl-herramientas-calculadoras').html());
@@ -441,8 +465,8 @@
       __extends(herramientasCalculadoraIsrView, _super);
 
       function herramientasCalculadoraIsrView() {
-        _ref13 = herramientasCalculadoraIsrView.__super__.constructor.apply(this, arguments);
-        return _ref13;
+        _ref14 = herramientasCalculadoraIsrView.__super__.constructor.apply(this, arguments);
+        return _ref14;
       }
 
       herramientasCalculadoraIsrView.prototype.template = _.template($('#tmpl-herramientas-calculadora-isr').html());
@@ -477,8 +501,8 @@
       __extends(ayudaView, _super);
 
       function ayudaView() {
-        _ref14 = ayudaView.__super__.constructor.apply(this, arguments);
-        return _ref14;
+        _ref15 = ayudaView.__super__.constructor.apply(this, arguments);
+        return _ref15;
       }
 
       ayudaView.prototype.template = _.template($('#tmpl-ayuda').html());
@@ -504,8 +528,8 @@
       __extends(citaAgendarView, _super);
 
       function citaAgendarView() {
-        _ref15 = citaAgendarView.__super__.constructor.apply(this, arguments);
-        return _ref15;
+        _ref16 = citaAgendarView.__super__.constructor.apply(this, arguments);
+        return _ref16;
       }
 
       citaAgendarView.prototype.template = _.template($('#tmpl-cita-agendar').html());
@@ -531,8 +555,8 @@
       __extends(citaAgendarLugaresView, _super);
 
       function citaAgendarLugaresView() {
-        _ref16 = citaAgendarLugaresView.__super__.constructor.apply(this, arguments);
-        return _ref16;
+        _ref17 = citaAgendarLugaresView.__super__.constructor.apply(this, arguments);
+        return _ref17;
       }
 
       citaAgendarLugaresView.prototype.template = _.template($('#tmpl-cita-agendar-lugares').html());
@@ -558,8 +582,8 @@
       __extends(citaAgendarConfirmarView, _super);
 
       function citaAgendarConfirmarView() {
-        _ref17 = citaAgendarConfirmarView.__super__.constructor.apply(this, arguments);
-        return _ref17;
+        _ref18 = citaAgendarConfirmarView.__super__.constructor.apply(this, arguments);
+        return _ref18;
       }
 
       citaAgendarConfirmarView.prototype.template = _.template($('#tmpl-cita-agendar-confirmar').html());
@@ -585,8 +609,8 @@
       __extends(citaAgendarConfirmacionView, _super);
 
       function citaAgendarConfirmacionView() {
-        _ref18 = citaAgendarConfirmacionView.__super__.constructor.apply(this, arguments);
-        return _ref18;
+        _ref19 = citaAgendarConfirmacionView.__super__.constructor.apply(this, arguments);
+        return _ref19;
       }
 
       citaAgendarConfirmacionView.prototype.template = _.template($('#tmpl-cita-agendar-confirmacion').html());
@@ -603,8 +627,8 @@
       __extends(missingView, _super);
 
       function missingView() {
-        _ref19 = missingView.__super__.constructor.apply(this, arguments);
-        return _ref19;
+        _ref20 = missingView.__super__.constructor.apply(this, arguments);
+        return _ref20;
       }
 
       missingView.prototype.template = _.template($('#tmpl-404').html());
@@ -623,13 +647,14 @@
       __extends(Router, _super);
 
       function Router() {
-        _ref20 = Router.__super__.constructor.apply(this, arguments);
-        return _ref20;
+        _ref21 = Router.__super__.constructor.apply(this, arguments);
+        return _ref21;
       }
 
       Router.prototype.routes = {
         '': 'index',
         'login': 'login',
+        'notificacion/:id': 'notificacion',
         'citas': 'citas',
         'citas/agendar': 'citas_agendar',
         'citas/agendar/lugares': 'citas_agendar_lugares',
@@ -656,6 +681,12 @@
       Router.prototype.login = function() {
         var view;
         view = new SAT.loginView;
+        return view.render();
+      };
+
+      Router.prototype.notificacion = function() {
+        var view;
+        view = new SAT.notificacionView;
         return view.render();
       };
 

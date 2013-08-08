@@ -86,6 +86,7 @@ $ ->
       'click a.back': 'evt_back'
       'click a.notif': 'evt_notif'
       'click a.help': 'evt_help'
+      'click .notificacion a': 'evt_ver_notif'
     initialize: (ini)->
       @history = ini.history
       @listenTo @history, 'history:change', (h)->
@@ -104,6 +105,9 @@ $ ->
     evt_help: (e)->
       e.preventDefault()
       router.navigate '/ayuda', true
+    evt_ver_notif: (e)->
+      e.preventDefault()
+      router.navigate '/notificacion/1', true
     render: ->
       @$el.html @template
       @
@@ -123,6 +127,13 @@ $ ->
     render: ->
       @$el.html @template
       @
+
+  class SAT.notificacionView extends Backbone.AnimView
+    template: _.template $('#tmpl-notificacion').html()
+    render: ->
+      @$el.html @template
+      @
+
 
   class SAT.indexView extends Backbone.AnimView
     template: _.template $('#tmpl-index').html()
@@ -276,6 +287,7 @@ $ ->
     routes:
       '': 'index'
       'login': 'login'
+      'notificacion/:id': 'notificacion'
       'citas': 'citas'
       'citas/agendar': 'citas_agendar'
       'citas/agendar/lugares': 'citas_agendar_lugares'
@@ -294,6 +306,9 @@ $ ->
       indexview.render()
     login: ->
       view = new SAT.loginView
+      view.render()
+    notificacion: ->
+      view = new SAT.notificacionView
       view.render()
     citas: ->
       view = new SAT.citasView

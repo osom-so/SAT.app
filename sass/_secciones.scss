@@ -166,6 +166,7 @@ ul.no-bullets{
 .icon-notif-success{ @include bg($layout, 'notif_success'); }
 .icon-notif-news{ @include bg($layout, 'notif_news'); }
 .icon-notif-warning{ @include bg($layout, 'notif_warning'); }
+.icon-huge-warning{ @include bg($layout, 'huge_warning'); }
 
 .padded-bottom{
   padding-bottom: 20px;
@@ -242,9 +243,19 @@ big{
     color: $blue-light;
   }
 }
-
+.blue-medium{
+  color: $blue-medium;
+  &.bg{
+    background: $blue-medium;
+    color: #fff;
+  }
+}
 .blue-light{
   color: $blue-light;
+  &.bg{
+    background: $blue-light;
+    color: #fff;
+  }
 }
 
 .grey{
@@ -324,6 +335,33 @@ input, textarea{
     background: $blue-light;
   }
 }
+
+#seccion-notificacion{
+  h1, h3{
+    margin: 0;
+    padding: 5% 0 3%;
+  }
+  p{
+    margin: 0;
+    padding: 1% 0;
+  }
+
+  header{
+    padding: 10px 10px 15px;
+    h1{
+      font-size: 3.2rem;
+      color: #fff;
+      padding-bottom: 0;
+    }
+  }
+  article{
+    padding: 0 0 10px;
+  }
+  .accion{
+    padding: 20px 0;
+  }
+}
+
 #seccion-cita-lugares{
   li.fecha{
     padding: 5px 0;

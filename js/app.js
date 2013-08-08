@@ -3,7 +3,7 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   $(function() {
-    var header, pagos, prefixes, router, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+    var header, pagos, prefixes, router, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
     window.SAT = {
       isLogged: true,
       goBack: false,
@@ -223,8 +223,6 @@
         return _ref5;
       }
 
-      loginView.prototype.el = '#app';
-
       loginView.prototype.template = _.template($('#tmpl-login').html());
 
       loginView.prototype.events = {
@@ -259,8 +257,6 @@
         return _ref6;
       }
 
-      indexView.prototype.el = '#app';
-
       indexView.prototype.template = _.template($('#tmpl-index').html());
 
       indexView.prototype.events = {
@@ -288,8 +284,6 @@
         return _ref7;
       }
 
-      citasView.prototype.el = '#app';
-
       citasView.prototype.template = _.template($('#tmpl-citas').html());
 
       citasView.prototype.events = {
@@ -316,8 +310,6 @@
         _ref8 = pagosView.__super__.constructor.apply(this, arguments);
         return _ref8;
       }
-
-      pagosView.prototype.el = '#app';
 
       pagosView.prototype.template = _.template($('#tmpl-pagos').html());
 
@@ -370,8 +362,6 @@
         return _ref10;
       }
 
-      feedbackView.prototype.el = '#app';
-
       feedbackView.prototype.template = _.template($('#tmpl-feedback').html());
 
       feedbackView.prototype.render = function() {
@@ -389,8 +379,6 @@
         _ref11 = herramientasView.__super__.constructor.apply(this, arguments);
         return _ref11;
       }
-
-      herramientasView.prototype.el = '#app';
 
       herramientasView.prototype.template = _.template($('#tmpl-herramientas').html());
 
@@ -410,8 +398,6 @@
         return _ref12;
       }
 
-      ayudaView.prototype.el = '#app';
-
       ayudaView.prototype.template = _.template($('#tmpl-ayuda').html());
 
       ayudaView.prototype.render = function() {
@@ -429,8 +415,6 @@
         _ref13 = citaAgendarView.__super__.constructor.apply(this, arguments);
         return _ref13;
       }
-
-      citaAgendarView.prototype.el = '#app';
 
       citaAgendarView.prototype.template = _.template($('#tmpl-cita-agendar').html());
 
@@ -459,8 +443,6 @@
         return _ref14;
       }
 
-      citaAgendarLugaresView.prototype.el = '#app';
-
       citaAgendarLugaresView.prototype.template = _.template($('#tmpl-cita-agendar-lugares').html());
 
       citaAgendarLugaresView.prototype.events = {
@@ -487,8 +469,6 @@
         _ref15 = citaAgendarConfirmarView.__super__.constructor.apply(this, arguments);
         return _ref15;
       }
-
-      citaAgendarConfirmarView.prototype.el = '#app';
 
       citaAgendarConfirmarView.prototype.template = _.template($('#tmpl-cita-agendar-confirmar').html());
 
@@ -517,8 +497,6 @@
         return _ref16;
       }
 
-      citaAgendarConfirmacionView.prototype.el = '#app';
-
       citaAgendarConfirmacionView.prototype.template = _.template($('#tmpl-cita-agendar-confirmacion').html());
 
       citaAgendarConfirmacionView.prototype.render = function() {
@@ -529,14 +507,32 @@
       return citaAgendarConfirmacionView;
 
     })(Backbone.AnimView);
+    SAT.missingView = (function(_super) {
+      __extends(missingView, _super);
+
+      function missingView() {
+        _ref17 = missingView.__super__.constructor.apply(this, arguments);
+        return _ref17;
+      }
+
+      missingView.prototype.template = _.template($('#tmpl-404').html());
+
+      missingView.prototype.render = function() {
+        this.$el.html(this.template);
+        return this;
+      };
+
+      return missingView;
+
+    })(Backbone.AnimView);
     /* Router*/
 
     SAT.Router = (function(_super) {
       __extends(Router, _super);
 
       function Router() {
-        _ref17 = Router.__super__.constructor.apply(this, arguments);
-        return _ref17;
+        _ref18 = Router.__super__.constructor.apply(this, arguments);
+        return _ref18;
       }
 
       Router.prototype.routes = {
@@ -547,11 +543,11 @@
         'citas/agendar/lugares': 'citas_agendar_lugares',
         'citas/agendar/confirmar': 'citas_agendar_confirmar',
         'citas/agendar/confirmacion': 'citas_agendar_confirmacion',
-        'citas/:id': 'citas',
         'pagos': 'pagos',
         'feedback': 'feedback',
         'herramientas': 'herramientas',
-        'ayuda': 'ayuda'
+        'ayuda': 'ayuda',
+        '*fourohfour': 'fourohfour'
       };
 
       Router.prototype.index = function() {
@@ -622,6 +618,12 @@
       Router.prototype.ayuda = function() {
         var view;
         view = new SAT.ayudaView;
+        return view.render();
+      };
+
+      Router.prototype.fourohfour = function() {
+        var view;
+        view = new SAT.missingView;
         return view.render();
       };
 

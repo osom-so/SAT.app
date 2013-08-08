@@ -107,7 +107,6 @@ $ ->
       @
 
   class SAT.loginView extends Backbone.AnimView
-    el: '#app'
     template: _.template $('#tmpl-login').html()
     events:
       'submit form#login': 'evt_login'
@@ -124,7 +123,6 @@ $ ->
       @
 
   class SAT.indexView extends Backbone.AnimView
-    el: '#app'
     template: _.template $('#tmpl-index').html()
     events:
       'click a': 'evt_menuitem'
@@ -136,7 +134,6 @@ $ ->
       @
 
   class SAT.citasView extends Backbone.AnimView
-    el: '#app'
     template: _.template $('#tmpl-citas').html()
     events:
       'click a': 'evt_menuitem'
@@ -148,7 +145,6 @@ $ ->
       @
 
   class SAT.pagosView extends Backbone.AnimView
-    el: '#app'
     template: _.template $('#tmpl-pagos').html()
     initialize: (ini)->
       @pagos = ini.pagos
@@ -168,28 +164,24 @@ $ ->
       @
 
   class SAT.feedbackView extends Backbone.AnimView
-    el: '#app'
     template: _.template $('#tmpl-feedback').html()
     render: ->
       @$el.html @template
       @
 
   class SAT.herramientasView extends Backbone.AnimView
-    el: '#app'
     template: _.template $('#tmpl-herramientas').html()
     render: ->
       @$el.html @template
       @
 
   class SAT.ayudaView extends Backbone.AnimView
-    el: '#app'
     template: _.template $('#tmpl-ayuda').html()
     render: ->
       @$el.html @template
       @
 
   class SAT.citaAgendarView extends Backbone.AnimView
-    el: '#app'
     template: _.template $('#tmpl-cita-agendar').html()
     events:
       'submit form': 'evt_submit'
@@ -201,7 +193,6 @@ $ ->
       @
 
   class SAT.citaAgendarLugaresView extends Backbone.AnimView
-    el: '#app'
     template: _.template $('#tmpl-cita-agendar-lugares').html()
     events:
       'submit form': 'evt_submit'
@@ -213,7 +204,6 @@ $ ->
       @
 
   class SAT.citaAgendarConfirmarView extends Backbone.AnimView
-    el: '#app'
     template: _.template $('#tmpl-cita-agendar-confirmar').html()
     events:
       'submit form': 'evt_submit'
@@ -225,8 +215,13 @@ $ ->
       @
 
   class SAT.citaAgendarConfirmacionView extends Backbone.AnimView
-    el: '#app'
     template: _.template $('#tmpl-cita-agendar-confirmacion').html()
+    render: ->
+      @$el.html @template
+      @
+
+  class SAT.missingView extends Backbone.AnimView
+    template: _.template $('#tmpl-404').html()
     render: ->
       @$el.html @template
       @
@@ -241,11 +236,11 @@ $ ->
       'citas/agendar/lugares': 'citas_agendar_lugares'
       'citas/agendar/confirmar': 'citas_agendar_confirmar'
       'citas/agendar/confirmacion': 'citas_agendar_confirmacion'
-      'citas/:id': 'citas'
       'pagos': 'pagos'
       'feedback': 'feedback'
       'herramientas': 'herramientas'
       'ayuda': 'ayuda'
+      '*fourohfour': 'fourohfour'
     index: ->
       return @navigate 'login', true unless SAT.isLogged
       indexview = new SAT.indexView
@@ -279,6 +274,9 @@ $ ->
       view.render()
     ayuda: ->
       view = new SAT.ayudaView
+      view.render()
+    fourohfour: ->
+      view = new SAT.missingView
       view.render()
 
   SAT.history = new SAT.historyModel

@@ -28,13 +28,18 @@ header#app-header span.logo {
   top: 7px;
   bottom: 0;
   left: 6px;
-  width: 110px;
-  background: url("/img/sat.png") no-repeat;
-  background-size: auto 40px;
   -webkit-transition: left 0.33s;
   -moz-transition: left 0.33s;
   -o-transition: left 0.33s;
   transition: left 0.33s;
+  background-image: url('/img/layout-s1c574e8fd4.png');
+  background-position: 0 0;
+  -webkit-background-size: 135px 44px;
+  -moz-background-size: 135px 44px;
+  -o-background-size: 135px 44px;
+  background-size: 135px 44px;
+  width: 135.5px;
+  height: 44px;
 }
 header#app-header a.action {
   position: absolute;

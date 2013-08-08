@@ -1,9 +1,11 @@
-@import 'compass/css3/shared';
-@import 'compass/css3/transition';
-@import 'compass/css3/transform';
+@import "compass/css3/background-size";
+@import "compass/css3/shared";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+@import "compass/utilities/sprites";
 
 $header-height: 55px;
-
+$layout: sprite-map("layout/*.png", $spacing: 4px);
 
 $blue-darker: #172336;
 $blue-dark: #1B2A40;
@@ -15,6 +17,18 @@ $grey: #67778A;
 $bg-blue: #F1F5FA;
 $bg-white: #fff;
 $bg-grey: #F6F7F6;
+
+@mixin bg($layout, $sprite){
+  $size: true;
+  $divide_by: 2;
+  background-image: $layout;
+  background-position: nth(sprite-position($layout, $sprite), 1)/$divide_by nth(sprite-position($layout, $sprite), 2)/$divide_by;
+  @include background-size(floor(image-width(sprite-path($layout))/$divide_by) floor(image-height(sprite-path($layout))/$divide_by));
+  @if $size{
+    width: image-width(sprite-file($layout, $sprite))/$divide_by;
+    height: image-height(sprite-file($layout, $sprite))/$divide_by;
+  }
+}
 
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {

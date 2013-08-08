@@ -2,5 +2,5 @@
 
     php -S 0.0.0.0:8888
     jitter coffee js
-    compass watch --css-dir=css --no-line-comments
+    compass watch
     guard -i

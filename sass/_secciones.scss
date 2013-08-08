@@ -136,11 +136,6 @@ ul.no-bullets{
   display: inline-block;
   height: 40px;
   width: 40px;
-  // background: rgba($blue-light, 0.3);
-  &.small{
-    height: 30px;
-    width: 30px;
-  }
 }
 .icon-header-back{ @include bg($layout, 'header_back'); }
 .icon-header-help{ @include bg($layout, 'header_ayuda'); }
@@ -157,6 +152,17 @@ ul.no-bullets{
 .icon-feedback-white{ @include bg($layout, 'white_feedback'); }
 .icon-herramientas-white{ @include bg($layout, 'white_herramientas'); }
 .icon-ayuda-white{ @include bg($layout, 'white_ayuda'); }
+.icon-ui-del{ @include bg($layout, 'ui_del'); }
+.icon-ui-dinero{ @include bg($layout, 'ui_dinero'); }
+.icon-ui-error{ @include bg($layout, 'ui_error'); }
+.icon-ui-info{ @include bg($layout, 'ui_info'); }
+.icon-ui-next{ @include bg($layout, 'ui_next'); }
+.icon-ui-success{ @include bg($layout, 'ui_success'); }
+.icon-ui-warning{ @include bg($layout, 'ui_warning'); }
+
+.icon-error{ @include bg($layout, 'ui_error'); }
+.icon-pagado{ @include bg($layout, 'ui_success'); }
+.icon-pendiente{ @include bg($layout, 'ui_warning'); }
 
 .padded-bottom{
   padding-bottom: 20px;
@@ -402,6 +408,24 @@ input, textarea{
     background: #f00;
     &:before{
       background: #900;
+    }
+  }
+}
+
+#pagos-list{
+  .st-pagado{
+    .id-status, .id-col{
+      background: $bg-green;
+    }
+  }
+  .st-pendiente{
+    .id-status, .id-col{
+      background: $bg-yellow;
+    }
+  }
+  .st-error{
+    .id-status, .id-col{
+      background: $bg-red;
     }
   }
 }

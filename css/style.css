@@ -32,7 +32,7 @@ header#app-header span.logo {
   -moz-transition: left 0.33s;
   -o-transition: left 0.33s;
   transition: left 0.33s;
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 0;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -928,13 +928,9 @@ ul.no-bullets {
   height: 40px;
   width: 40px;
 }
-.icon.small {
-  height: 30px;
-  width: 30px;
-}
 
 .icon-header-back {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -677px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -945,7 +941,7 @@ ul.no-bullets {
 }
 
 .icon-header-help {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -30px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -956,7 +952,7 @@ ul.no-bullets {
 }
 
 .icon-header-notif {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -57.5px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -967,7 +963,7 @@ ul.no-bullets {
 }
 
 .icon-home-cita {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -396px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -978,7 +974,7 @@ ul.no-bullets {
 }
 
 .icon-home-pagos {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -361px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -989,7 +985,7 @@ ul.no-bullets {
 }
 
 .icon-home-feedback {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -224.5px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -1000,7 +996,7 @@ ul.no-bullets {
 }
 
 .icon-home-herramientas {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -87px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -1011,7 +1007,7 @@ ul.no-bullets {
 }
 
 .icon-home-ayuda {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -561px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -1022,7 +1018,7 @@ ul.no-bullets {
 }
 
 .icon-home-cita {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -396px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -1033,7 +1029,7 @@ ul.no-bullets {
 }
 
 .icon-citas-white {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -458.5px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -1044,7 +1040,7 @@ ul.no-bullets {
 }
 
 .icon-cita-white {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -639.5px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -1055,7 +1051,7 @@ ul.no-bullets {
 }
 
 .icon-pagos-white {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -259.5px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -1066,7 +1062,7 @@ ul.no-bullets {
 }
 
 .icon-feedback-white {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -297px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -1077,7 +1073,7 @@ ul.no-bullets {
 }
 
 .icon-herramientas-white {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -122px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -1088,7 +1084,7 @@ ul.no-bullets {
 }
 
 .icon-ayuda-white {
-  background-image: url('/img/layout-sd86f01037c.png');
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
   background-position: 0 -496px;
   -webkit-background-size: 84px 710px;
   -moz-background-size: 84px 710px;
@@ -1096,6 +1092,116 @@ ul.no-bullets {
   background-size: 84px 710px;
   width: 32.5px;
   height: 35.5px;
+}
+
+.icon-ui-del {
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
+  background-position: 0 -617.5px;
+  -webkit-background-size: 84px 710px;
+  -moz-background-size: 84px 710px;
+  -o-background-size: 84px 710px;
+  background-size: 84px 710px;
+  width: 36px;
+  height: 20px;
+}
+
+.icon-ui-dinero {
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
+  background-position: 0 -596px;
+  -webkit-background-size: 84px 710px;
+  -moz-background-size: 84px 710px;
+  -o-background-size: 84px 710px;
+  background-size: 84px 710px;
+  width: 12px;
+  height: 19.5px;
+}
+
+.icon-ui-error {
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
+  background-position: 0 -159.5px;
+  -webkit-background-size: 84px 710px;
+  -moz-background-size: 84px 710px;
+  -o-background-size: 84px 710px;
+  background-size: 84px 710px;
+  width: 25.5px;
+  height: 25.5px;
+}
+
+.icon-ui-info {
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
+  background-position: 0 -334.5px;
+  -webkit-background-size: 84px 710px;
+  -moz-background-size: 84px 710px;
+  -o-background-size: 84px 710px;
+  background-size: 84px 710px;
+  width: 24px;
+  height: 24.5px;
+}
+
+.icon-ui-next {
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
+  background-position: 0 -695px;
+  -webkit-background-size: 84px 710px;
+  -moz-background-size: 84px 710px;
+  -o-background-size: 84px 710px;
+  background-size: 84px 710px;
+  width: 11.5px;
+  height: 15px;
+}
+
+.icon-ui-success {
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
+  background-position: 0 -431px;
+  -webkit-background-size: 84px 710px;
+  -moz-background-size: 84px 710px;
+  -o-background-size: 84px 710px;
+  background-size: 84px 710px;
+  width: 25.5px;
+  height: 25.5px;
+}
+
+.icon-ui-warning {
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
+  background-position: 0 -533.5px;
+  -webkit-background-size: 84px 710px;
+  -moz-background-size: 84px 710px;
+  -o-background-size: 84px 710px;
+  background-size: 84px 710px;
+  width: 25.5px;
+  height: 25.5px;
+}
+
+.icon-error {
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
+  background-position: 0 -159.5px;
+  -webkit-background-size: 84px 710px;
+  -moz-background-size: 84px 710px;
+  -o-background-size: 84px 710px;
+  background-size: 84px 710px;
+  width: 25.5px;
+  height: 25.5px;
+}
+
+.icon-pagado {
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
+  background-position: 0 -431px;
+  -webkit-background-size: 84px 710px;
+  -moz-background-size: 84px 710px;
+  -o-background-size: 84px 710px;
+  background-size: 84px 710px;
+  width: 25.5px;
+  height: 25.5px;
+}
+
+.icon-pendiente {
+  background-image: url('/img/layout-s7fc2ce0f5d.png');
+  background-position: 0 -533.5px;
+  -webkit-background-size: 84px 710px;
+  -moz-background-size: 84px 710px;
+  -o-background-size: 84px 710px;
+  background-size: 84px 710px;
+  width: 25.5px;
+  height: 25.5px;
 }
 
 .padded-bottom {
@@ -1355,4 +1461,14 @@ input, textarea {
 }
 #seccion-404 .titulo:before {
   background: #900;
+}
+
+#pagos-list .st-pagado .id-status, #pagos-list .st-pagado .id-col {
+  background: #f4faf1;
+}
+#pagos-list .st-pendiente .id-status, #pagos-list .st-pendiente .id-col {
+  background: #fffbe6;
+}
+#pagos-list .st-error .id-status, #pagos-list .st-error .id-col {
+  background: #fef0eb;
 }

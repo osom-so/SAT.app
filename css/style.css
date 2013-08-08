@@ -1549,6 +1549,7 @@ input, textarea {
   width: 100%;
   font-size: 1.3rem;
   color: #fff;
+  border: 0;
 }
 #seccion-calculadora table#calc {
   width: 100%;
@@ -1556,18 +1557,18 @@ input, textarea {
   font-weight: bold;
   color: #4d6a8b;
 }
-#seccion-calculadora table#calc td {
+#seccion-calculadora table#calc tbody td {
   font-size: 1.5rem;
   text-align: center;
   height: 50px;
 }
-#seccion-calculadora table#calc td + td {
+#seccion-calculadora table#calc tbody td + td {
   border-left: 1px dashed #ccc;
 }
-#seccion-calculadora table#calc tr:nth-child(odd) {
+#seccion-calculadora table#calc tbody tr:nth-child(odd) {
   background: #f1f5fa;
 }
-#seccion-calculadora table#calc tr:nth-child(even) {
+#seccion-calculadora table#calc tbody tr:nth-child(even) {
   background: white;
 }
 #seccion-calculadora table#periodo {
@@ -1587,6 +1588,9 @@ input, textarea {
   width: 100%;
   text-align: center;
   font-size: 1.2rem;
+}
+#seccion-calculadora table#resultado td {
+  padding: 5px 10px;
 }
 #seccion-calculadora table#resultado td:nth-child(2) {
   background: #f1f5fa;

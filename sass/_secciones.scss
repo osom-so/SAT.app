@@ -401,26 +401,29 @@ input, textarea{
     width: 100%;
     font-size: 1.3rem;
     color: #fff;
+    border: 0;
   }
   table#calc{
     width: 100%;
     border-collapse: collapse;
     font-weight: bold;
     color: $blue-medium;
-    td{
-      font-size: 1.5rem;
-      text-align: center;
-      height: 50px;
-      & + td{
-        border-left: 1px dashed #ccc;
+    tbody{
+      td{
+        font-size: 1.5rem;
+        text-align: center;
+        height: 50px;
+        & + td{
+          border-left: 1px dashed #ccc;
+        }
       }
-    }
-    tr{
-      &:nth-child(odd){
-        background: $bg-blue;
-      }
-      &:nth-child(even){
-        background: $bg-white;
+      tr{
+        &:nth-child(odd){
+          background: $bg-blue;
+        }
+        &:nth-child(even){
+          background: $bg-white;
+        }
       }
     }
   }
@@ -442,6 +445,7 @@ input, textarea{
     text-align: center;
     font-size: 1.2rem;
     td{
+      padding: 5px 10px;
       &:nth-child(2){
         background: $bg-blue;
       }

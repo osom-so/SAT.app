@@ -107,8 +107,14 @@ Contraseña:<br>
 <script type="text/template" id="tmpl-cita-agendar-lugares">
 <div id="seccion-cita-lugares">
 <h2 class="titulo has-icon"><span class="icon icon-cita-white"></span> Agendar Cita</h2>
+<div class="table">
+  <div class="tcell t70 col-results">
+    <h4>Encontramos <strong>3</strong> lugares</h4>
+    <small>Recomendaciones en función de tu ubicación y disponibilidad de los módulos.</small>
+  </div>
+  <div class="tcell t30 col-more middle blue-darker bg">Más lugares y horas »</div>
+</div>
 <div class="wrap">
-<h4>Encontramos <strong>3</strong> lugares</h4>
 </div>
 <form action="/citas/agendar/confirmar">
 <ul class="touch-list">
@@ -117,7 +123,7 @@ Contraseña:<br>
   <strong>Centro Nacional de Consulta</strong>
   <div class="table">
     <div class="tcell t70">
-      <small>a 3 kilómetros</small><br>
+      <small class="rel-km">a 3 kilómetros</small><br>
     </div>
     <div class="tcell t30 top ctr">
       <big class="big nowrap">10:00 a.m.</big><br>
@@ -130,7 +136,7 @@ Contraseña:<br>
   <strong>Norte D.F.</strong>
   <div class="table">
     <div class="tcell t70">
-      <small>a 8.3 kilómetros</small><br>
+      <small class="rel-km">a 8.3 kilómetros</small><br>
     </div>
     <div class="tcell t30 top ctr">
       <big class="big nowrap">11:15 a.m.</big><br>
@@ -143,7 +149,7 @@ Contraseña:<br>
   <strong>Xochimilco</strong>
   <div class="table">
     <div class="tcell t70">
-      <small>a 9.5 kilómetros</small><br>
+      <small class="rel-km">a 9.5 kilómetros</small><br>
     </div>
     <div class="tcell t30 top ctr">
       <big class="big nowrap">9:35 a.m.</big><br>

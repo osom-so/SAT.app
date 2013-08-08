@@ -296,6 +296,30 @@ input, textarea{
     color: #fff;
     background: $blue-light;
   }
+  .rel-days{
+    color: $green-light;
+  }
+  .rel-km{
+    color: $blue-medium;
+  }
+  li.full-selected{
+    .rel-km{
+      color: #fff;
+    }
+  }
+  .col-more{
+    padding: 5px;
+  }
+  .col-results{
+    padding: 5px;
+    h4{
+      margin: 0;
+      padding: 7px 0 5px;
+    }
+    small{
+      font-size: 0.8rem;
+    }
+  }
 }
 
 #seccion-calculadora{

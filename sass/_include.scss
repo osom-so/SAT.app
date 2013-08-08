@@ -13,11 +13,14 @@ $blue-dark: #1B2A40;
 $blue-medium: #4D6A8B;
 $blue-light: #81ADE0;
 
+$green-light: #98CA74;
+
 $grey: #67778A;
 
 $bg-blue: #F1F5FA;
 $bg-white: #fff;
 $bg-grey: #F6F7F6;
+$bg-green: #F4FAF1;
 
 @mixin bg($layout, $sprite){
   $size: true;

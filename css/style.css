@@ -1260,6 +1260,28 @@ input, textarea {
   color: #fff;
   background: #81ade0;
 }
+#seccion-cita-lugares .rel-days {
+  color: #98ca74;
+}
+#seccion-cita-lugares .rel-km {
+  color: #4d6a8b;
+}
+#seccion-cita-lugares li.full-selected .rel-km {
+  color: #fff;
+}
+#seccion-cita-lugares .col-more {
+  padding: 5px;
+}
+#seccion-cita-lugares .col-results {
+  padding: 5px;
+}
+#seccion-cita-lugares .col-results h4 {
+  margin: 0;
+  padding: 7px 0 5px;
+}
+#seccion-cita-lugares .col-results small {
+  font-size: 0.8rem;
+}
 
 #seccion-calculadora .inputnumber {
   padding: 0.5em 0.8em;

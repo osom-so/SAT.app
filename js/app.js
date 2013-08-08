@@ -12,6 +12,20 @@
     };
     prefixes = ['moz', 'webkit'];
     $('#app, #app2').bind("" + (_.map(prefixes, function(pfx) {
+      return "" + pfx + "AnimationStart";
+    }).join(' ')), function(e) {
+      var $in, $out, $zbra_out;
+      if (~['slidein', 'slidein-back'].indexOf(e.originalEvent.animationName)) {
+        $in = $(this);
+        $out = $("#app, #app2").filter(":not(#" + ($(this).attr('id')) + ")");
+        $in.css({
+          top: window.scrollY
+        });
+        if (($zbra_out = $out.find('.zebra-list')).size() && !$zbra_out.is('.reverse')) {
+          return $in.find('.zebra-list').addClass('reverse');
+        }
+      }
+    }).bind("" + (_.map(prefixes, function(pfx) {
       return "" + pfx + "AnimationEnd";
     }).join(' ')), function(e) {
       var $in, $out;
@@ -28,16 +42,6 @@
         $in = $(this);
         return $in.css({
           top: 0
-        });
-      }
-    }).bind("" + (_.map(prefixes, function(pfx) {
-      return "" + pfx + "AnimationStart";
-    }).join(' ')), function(e) {
-      var $in;
-      if (~['slidein', 'slidein-back'].indexOf(e.originalEvent.animationName)) {
-        $in = $(this);
-        return $in.css({
-          top: window.scrollY
         });
       }
     });

@@ -6,7 +6,15 @@ $ ->
     history: []
 
   prefixes = ['moz', 'webkit']
-  $('#app, #app2').bind "#{_.map(prefixes, (pfx)-> "#{pfx}AnimationEnd").join(' ')}", (e)->
+  $('#app, #app2').bind "#{_.map(prefixes, (pfx)-> "#{pfx}AnimationStart").join(' ')}", (e)->
+    if ~['slidein', 'slidein-back'].indexOf e.originalEvent.animationName
+      $in = $(@)
+      $out = $("#app, #app2").filter(":not(##{$(@).attr('id')})")
+      $in.css
+        top: window.scrollY
+      if ($zbra_out = $out.find('.zebra-list')).size() and !$zbra_out.is('.reverse')
+        $in.find('.zebra-list').addClass 'reverse'
+  .bind "#{_.map(prefixes, (pfx)-> "#{pfx}AnimationEnd").join(' ')}", (e)->
     if ~['slideout', 'slideout-back'].indexOf e.originalEvent.animationName
       $out = $(@)
       $in = $("#app, #app2").filter(":not(##{$(@).attr('id')})")
@@ -18,11 +26,6 @@ $ ->
       $in = $(@)
       $in.css
         top: 0
-  .bind "#{_.map(prefixes, (pfx)-> "#{pfx}AnimationStart").join(' ')}", (e)->
-    if ~['slidein', 'slidein-back'].indexOf e.originalEvent.animationName
-      $in = $(@)
-      $in.css
-        top: window.scrollY
 
   Backbone.history.bind 'route', ->
     history = SAT.history.get('history')

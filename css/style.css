@@ -2,8 +2,8 @@ body {
   color: #333;
   background: #fff;
   margin: 0;
-  padding: 44px 0 0;
-  font: 100%/1.15 proxima-nova-soft, Helvetica, sans-serif;
+  padding: 55px 0 0;
+  font: 16px/1.15 proxima-nova-soft, Helvetica, sans-serif;
 }
 
 a {
@@ -14,23 +14,23 @@ a {
 header#app-header {
   position: fixed;
   z-index: 300;
-  margin-bottom: 44px;
+  margin-bottom: 55px;
   top: 0;
   left: 0;
   right: 0;
-  min-height: 44px;
+  min-height: 55px;
   border-bottom: 1px solid #ccc;
   background: #F6F7F6;
   background: linear-gradient(#f6f7f6 50%, #eef0ee 50%);
 }
 header#app-header span.logo {
   position: absolute;
-  top: 5px;
+  top: 7px;
   bottom: 0;
   left: 6px;
   width: 110px;
   background: url("/img/sat.png") no-repeat;
-  background-size: auto 35px;
+  background-size: auto 40px;
   -webkit-transition: left 0.33s;
   -moz-transition: left 0.33s;
   -o-transition: left 0.33s;
@@ -41,8 +41,8 @@ header#app-header a.action {
   top: 0;
   bottom: 0;
   display: block;
-  width: 44px;
-  line-height: 44px;
+  width: 55px;
+  line-height: 55px;
   font-size: 33px;
   text-align: center;
   color: #fff;
@@ -55,19 +55,19 @@ header#app-header a.action {
 header#app-header a.action.back {
   background: #78A3D0;
   background: linear-gradient(#78a3d0 50%, #749eca 50%);
-  left: -44px;
+  left: -55px;
 }
 header#app-header a.action.help {
   right: 0;
 }
 header#app-header a.action.notif {
-  right: 44px;
+  right: 55px;
 }
 header#app-header.has-history a.back {
   left: 0;
 }
 header#app-header.has-history span.logo {
-  left: 50px;
+  left: 61px;
 }
 
 #app-main {
@@ -79,11 +79,6 @@ header#app-header.has-history span.logo {
   top: 0;
   left: 0;
   right: 0;
-  background: #ffe;
-}
-
-#app2 {
-  background: #eff;
 }
 
 .wrap {
@@ -862,7 +857,7 @@ ul.touch-list {
   padding: 0;
 }
 ul.touch-list > li a, ul.touch-list > li .el {
-  padding: 10px 10px;
+  padding: 18px 15px;
   display: block;
 }
 ul.touch-list > li a.no-el {
@@ -870,6 +865,41 @@ ul.touch-list > li a.no-el {
 }
 ul.touch-list.with-border > li {
   border-bottom: 1px solid #eee;
+}
+
+ul.zebra-list > li:nth-child(odd) {
+  background: #F1F5FA;
+}
+ul.zebra-list > li:nth-child(even) {
+  background: #fff;
+}
+ul.zebra-list.reverse > li:nth-child(odd) {
+  background: #fff;
+}
+ul.zebra-list.reverse > li:nth-child(even) {
+  background: #F1F5FA;
+}
+
+ul.has-icons > li {
+  position: relative;
+  padding-left: 40px;
+}
+ul.has-icons > li .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  margin-top: -20px;
+}
+
+.icon {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background: rgba(129, 173, 224, 0.3);
+}
+.icon.small {
+  height: 30px;
+  width: 30px;
 }
 
 .was-full-selected, .full-selected {

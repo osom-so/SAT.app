@@ -13,6 +13,11 @@ $ ->
       $out.empty()
       $in.css
         top: 0
+    if ~['slidein', 'slidein-back'].indexOf e.originalEvent.animationName
+      window.scrollTo 0,0
+      $in = $(@)
+      $in.css
+        top: 0
   .bind "#{_.map(prefixes, (pfx)-> "#{pfx}AnimationStart").join(' ')}", (e)->
     if ~['slidein', 'slidein-back'].indexOf e.originalEvent.animationName
       $in = $(@)

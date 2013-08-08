@@ -43,19 +43,19 @@ Contraseña:<br>
 <div class="wrap">
 <h2 class="titulo">Bienvenido.</h2>
 </div>
-<ul class="touch-list">
-<li><a href="/citas">Citas</a></li>
-<li><a href="/pagos">Pagos</a></li>
-<li><a href="/feedback">Quejas <span class="amp">&amp;</span> Sugerencias</a></li>
-<li><a href="/herramientas">Herramientas</a></li>
-<li><a href="/ayuda">Ayuda</a></li>
+<ul class="touch-list zebra-list has-icons">
+<li><a href="/citas"><span class="icon"></span> Citas</a></li>
+<li><a href="/pagos"><span class="icon"></span> Pagos</a></li>
+<li><a href="/feedback"><span class="icon"></span> Quejas <span class="amp">&amp;</span> Sugerencias</a></li>
+<li><a href="/herramientas"><span class="icon"></span> Herramientas</a></li>
+<li><a href="/ayuda"><span class="icon"></span> Ayuda</a></li>
 </ul>
 </script>
 <script type="text/template" id="tmpl-citas">
 <div class="wrap">
 <h2 class="titulo">Citas</h2>
 </div>
-<ul class="touch-list">
+<ul class="touch-list zebra-list">
 <li><a href="/citas/agendar">Agendar cita</a></li>
 <li><a href="/citas/modulos">Módulos de atención</a></li>
 <li><a href="/citas/preguntas-frecuentes">Preguntas frecuentes</a></li>
@@ -116,11 +116,12 @@ Contraseña:<br>
 <ul class="touch-list">
 <li class="fecha"><div class="wrap">Miércoles, 21 de Agosto, 2013</div></li>
 <li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  <strong>Centro Nacional de Consulta</strong>
   <div class="table">
     <div class="tcell t70">
-      <strong class="lugar">Centro Nacional de Consulta</strong><br><small>a 3 kilómetros</small><br>
+      <small>a 3 kilómetros</small><br>
     </div>
-    <div class="tcell t30 middle ctr">
+    <div class="tcell t30 top ctr">
       <big class="big nowrap">10:00 a.m.</big>
       <small class="rel-days">Dentro de 10 días</small>
     </div>
@@ -128,11 +129,12 @@ Contraseña:<br>
 </label></li>
 <li class="fecha"><div class="wrap">Jueves, 22 de Agosto, 2013</div></li>
 <li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  <strong>Norte D.F.</strong>
   <div class="table">
     <div class="tcell t70">
-      <strong>Norte D.F.</strong><br><small>a 8.3 kilómetros</small><br>
+      <small>a 8.3 kilómetros</small><br>
     </div>
-    <div class="tcell t30 middle ctr">
+    <div class="tcell t30 top ctr">
       <big class="big nowrap">11:15 a.m.</big>
       <small class="rel-days">Dentro de 11 días</small>
     </div>
@@ -140,11 +142,12 @@ Contraseña:<br>
 </label></li>
 <li class="fecha"><div class="wrap">Martes, 20 de Agosto, 2013</div></li>
 <li><label class="el"><input type="radio" class="full-select" name="cita[tipo]">
+  <strong>Xochimilco</strong>
   <div class="table">
     <div class="tcell t70">
-      <strong>Xochimilco</strong><br><small>a 9.5 kilómetros</small><br>
+      <small>a 9.5 kilómetros</small><br>
     </div>
-    <div class="tcell t30 middle ctr">
+    <div class="tcell t30 top ctr">
       <big class="big nowrap">9:35 a.m.</big>
       <small class="rel-days">Dentro de 9 días</small>
     </div>
@@ -216,7 +219,7 @@ Contraseña:<br>
 <script type="text/template" id="tmpl-pago-el">
 <a class="no-el" href="/pagos/<%= pago.id %>">
 <div class="table padded">
-<div class="tcell middle t10 bg-blue id-status"><span class="icon icon-<%=pago.get('status') %>"></span></div>
+<div class="tcell middle t10 bg-blue id-status"><span class="icon small icon-<%=pago.get('status') %>"></span></div>
 <div class="tcell middle t35 bg-blue id-col"><%=pago.get('id') %></div>
 <div class="tcell t45 rgt bg-white extra-col">
 <strong><%=pago.get('fecha') %></strong><br>
@@ -231,7 +234,7 @@ Contraseña:<br>
 <div class="wrap">
 <h2 class="titulo">Quejas <span class="amp">&amp;</span> Sugerencias</h2>
 </div>
-<ul class="touch-list">
+<ul class="touch-list zebra-list">
 <li><a href="/feedback/quejas">Quejas</a></li>
 <li><a href="/feedback/sugerencias">Sugerencias</a></li>
 <li><a href="/feedback/aclaraciones">Aclaraciones</a></li>
@@ -242,7 +245,7 @@ Contraseña:<br>
 <div class="wrap">
 <h2 class="titulo">Herramientas</h2>
 </div>
-<ul class="touch-list">
+<ul class="touch-list zebra-list">
 <li><a href="/herramientas/tablas">Tablas <span class="amp">&amp;</span> Tasas</a></li>
 <li><a href="/herramientas/calculadoras">Calculadoras</a></li>
 </ul>
@@ -251,7 +254,7 @@ Contraseña:<br>
 <div class="wrap">
 <h2 class="titulo">Ayuda</h2>
 </div>
-<ul class="touch-list">
+<ul class="touch-list zebra-list">
 <li><a href="/ayuda/orientacion">Orientación fiscal</a></li>
 <li><a href="/ayuda/faq">Preguntas frecuentes</a></li>
 <li><a href="/ayuda/modulos">Módulos de servicio</a></li>

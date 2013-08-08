@@ -4,8 +4,8 @@ body{
   color: #333;
   background: #fff;
   margin: 0;
-  padding: 44px 0 0;
-  font: 100%/1.15 proxima-nova-soft, Helvetica, sans-serif;
+  padding: $header-height 0 0;
+  font: 16px/1.15 proxima-nova-soft, Helvetica, sans-serif;
 }
 
 a{
@@ -16,22 +16,22 @@ a{
 header#app-header{
   position: fixed;
   z-index: 300;
-  margin-bottom: 44px;
+  margin-bottom: $header-height;
   top: 0;
   left: 0;
   right: 0;
-  min-height: 44px;
+  min-height: $header-height;
   border-bottom: 1px solid #ccc;
   background: #F6F7F6;
   background: linear-gradient(#F6F7F6 50%, #EEF0EE 50%);
   span.logo{
     position: absolute;
-    top: 5px;
+    top: 7px;
     bottom: 0;
     left: 6px;
     width: 110px;
     background: url('/img/sat.png') no-repeat;
-    background-size: auto 35px;
+    background-size: auto 40px;
     @include transition(left 0.33s);
   }
   a.action{
@@ -39,8 +39,8 @@ header#app-header{
     top: 0;
     bottom: 0;
     display: block;
-    width: 44px;
-    line-height: 44px;
+    width: $header-height;
+    line-height: $header-height;
     font-size: 33px;
     text-align: center;
     color: #fff;
@@ -49,13 +49,13 @@ header#app-header{
     &.back{
       background: #78A3D0;
       background: linear-gradient(#78A3D0 50%, #749ECA 50%);
-      left: -44px;
+      left: -$header-height;
     }
     &.help{
       right: 0;
     }
     &.notif{
-      right: 44px;
+      right: $header-height;
     }
   }
   &.has-history{
@@ -63,7 +63,7 @@ header#app-header{
       left: 0;
     }
     span.logo{
-      left: 50px;
+      left: $header-height+6;
     }
   }
 }
@@ -77,10 +77,8 @@ header#app-header{
   top: 0;
   left: 0;
   right: 0;
-  background: #ffe;
 }
 #app2{
-  background: #eff;
 }
 
 .wrap{

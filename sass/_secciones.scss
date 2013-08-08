@@ -76,7 +76,7 @@ ul.touch-list{
   padding: 0;
   > li{
     a, .el{
-      padding: 10px 10px;
+      padding: 18px 15px;
       display: block;
     }
     a.no-el{
@@ -89,6 +89,50 @@ ul.touch-list{
     }
   }
 }
+ul.zebra-list{
+  > li{
+    &:nth-child(odd){
+      background: #F1F5FA;
+    }
+    &:nth-child(even){
+      background: #fff;
+    }
+  }
+  &.reverse{
+    > li{
+      &:nth-child(odd){
+        background: #fff;
+      }
+      &:nth-child(even){
+        background: #F1F5FA;
+      }
+    }
+  }
+}
+ul.has-icons{
+  > li{
+    position: relative;
+    padding-left: 40px;
+    .icon{
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      margin-top: -20px;
+    }
+  }
+}
+
+.icon{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background: rgba($blue-light, 0.3);
+  &.small{
+    height: 30px;
+    width: 30px;
+  }
+}
+
 
 .was-full-selected, .full-selected{
   @include transition(background 0.3s);

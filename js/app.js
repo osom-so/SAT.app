@@ -19,6 +19,13 @@
         $out = $(this);
         $in = $("#app, #app2").filter(":not(#" + ($(this).attr('id')) + ")");
         $out.empty();
+        $in.css({
+          top: 0
+        });
+      }
+      if (~['slidein', 'slidein-back'].indexOf(e.originalEvent.animationName)) {
+        window.scrollTo(0, 0);
+        $in = $(this);
         return $in.css({
           top: 0
         });

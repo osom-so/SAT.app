@@ -3,7 +3,7 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   $(function() {
-    var header, pagos, prefixes, router, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+    var header, pagos, prefixes, router, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
     window.SAT = {
       isLogged: true,
       goBack: false,
@@ -384,6 +384,15 @@
 
       herramientasView.prototype.template = _.template($('#tmpl-herramientas').html());
 
+      herramientasView.prototype.events = {
+        'click a': 'evt_menuitem'
+      };
+
+      herramientasView.prototype.evt_menuitem = function(e) {
+        e.preventDefault();
+        return router.navigate($(e.currentTarget).attr('href'), true);
+      };
+
       herramientasView.prototype.render = function() {
         this.$el.html(this.template);
         return this;
@@ -392,12 +401,74 @@
       return herramientasView;
 
     })(Backbone.AnimView);
+    SAT.herramientasCalculadorasView = (function(_super) {
+      __extends(herramientasCalculadorasView, _super);
+
+      function herramientasCalculadorasView() {
+        _ref12 = herramientasCalculadorasView.__super__.constructor.apply(this, arguments);
+        return _ref12;
+      }
+
+      herramientasCalculadorasView.prototype.template = _.template($('#tmpl-herramientas-calculadoras').html());
+
+      herramientasCalculadorasView.prototype.events = {
+        'click a': 'evt_menuitem'
+      };
+
+      herramientasCalculadorasView.prototype.evt_menuitem = function(e) {
+        e.preventDefault();
+        return router.navigate($(e.currentTarget).attr('href'), true);
+      };
+
+      herramientasCalculadorasView.prototype.render = function() {
+        this.$el.html(this.template);
+        return this;
+      };
+
+      return herramientasCalculadorasView;
+
+    })(Backbone.AnimView);
+    SAT.herramientasCalculadoraIsrView = (function(_super) {
+      __extends(herramientasCalculadoraIsrView, _super);
+
+      function herramientasCalculadoraIsrView() {
+        _ref13 = herramientasCalculadoraIsrView.__super__.constructor.apply(this, arguments);
+        return _ref13;
+      }
+
+      herramientasCalculadoraIsrView.prototype.template = _.template($('#tmpl-herramientas-calculadora-isr').html());
+
+      herramientasCalculadoraIsrView.prototype.events = {
+        'submit form': 'evt_submit',
+        'click #periodo td': 'evt_cambiar_periodo'
+      };
+
+      herramientasCalculadoraIsrView.prototype.evt_submit = function(e) {
+        e.preventDefault();
+        return this.$el.find('#resultado').show();
+      };
+
+      herramientasCalculadoraIsrView.prototype.evt_cambiar_periodo = function(e) {
+        var $this;
+        $this = $(e.currentTarget);
+        $this.closest('table').find('td.selected').removeClass('selected');
+        return $this.addClass('selected');
+      };
+
+      herramientasCalculadoraIsrView.prototype.render = function() {
+        this.$el.html(this.template);
+        return this;
+      };
+
+      return herramientasCalculadoraIsrView;
+
+    })(Backbone.AnimView);
     SAT.ayudaView = (function(_super) {
       __extends(ayudaView, _super);
 
       function ayudaView() {
-        _ref12 = ayudaView.__super__.constructor.apply(this, arguments);
-        return _ref12;
+        _ref14 = ayudaView.__super__.constructor.apply(this, arguments);
+        return _ref14;
       }
 
       ayudaView.prototype.template = _.template($('#tmpl-ayuda').html());
@@ -414,8 +485,8 @@
       __extends(citaAgendarView, _super);
 
       function citaAgendarView() {
-        _ref13 = citaAgendarView.__super__.constructor.apply(this, arguments);
-        return _ref13;
+        _ref15 = citaAgendarView.__super__.constructor.apply(this, arguments);
+        return _ref15;
       }
 
       citaAgendarView.prototype.template = _.template($('#tmpl-cita-agendar').html());
@@ -441,8 +512,8 @@
       __extends(citaAgendarLugaresView, _super);
 
       function citaAgendarLugaresView() {
-        _ref14 = citaAgendarLugaresView.__super__.constructor.apply(this, arguments);
-        return _ref14;
+        _ref16 = citaAgendarLugaresView.__super__.constructor.apply(this, arguments);
+        return _ref16;
       }
 
       citaAgendarLugaresView.prototype.template = _.template($('#tmpl-cita-agendar-lugares').html());
@@ -468,8 +539,8 @@
       __extends(citaAgendarConfirmarView, _super);
 
       function citaAgendarConfirmarView() {
-        _ref15 = citaAgendarConfirmarView.__super__.constructor.apply(this, arguments);
-        return _ref15;
+        _ref17 = citaAgendarConfirmarView.__super__.constructor.apply(this, arguments);
+        return _ref17;
       }
 
       citaAgendarConfirmarView.prototype.template = _.template($('#tmpl-cita-agendar-confirmar').html());
@@ -495,8 +566,8 @@
       __extends(citaAgendarConfirmacionView, _super);
 
       function citaAgendarConfirmacionView() {
-        _ref16 = citaAgendarConfirmacionView.__super__.constructor.apply(this, arguments);
-        return _ref16;
+        _ref18 = citaAgendarConfirmacionView.__super__.constructor.apply(this, arguments);
+        return _ref18;
       }
 
       citaAgendarConfirmacionView.prototype.template = _.template($('#tmpl-cita-agendar-confirmacion').html());
@@ -513,8 +584,8 @@
       __extends(missingView, _super);
 
       function missingView() {
-        _ref17 = missingView.__super__.constructor.apply(this, arguments);
-        return _ref17;
+        _ref19 = missingView.__super__.constructor.apply(this, arguments);
+        return _ref19;
       }
 
       missingView.prototype.template = _.template($('#tmpl-404').html());
@@ -533,8 +604,8 @@
       __extends(Router, _super);
 
       function Router() {
-        _ref18 = Router.__super__.constructor.apply(this, arguments);
-        return _ref18;
+        _ref20 = Router.__super__.constructor.apply(this, arguments);
+        return _ref20;
       }
 
       Router.prototype.routes = {
@@ -548,6 +619,8 @@
         'pagos': 'pagos',
         'feedback': 'feedback',
         'herramientas': 'herramientas',
+        'herramientas/calculadoras': 'herramientas_calculadoras',
+        'herramientas/calculadora/isr': 'herramientas_calculadora_isr',
         'ayuda': 'ayuda',
         '*fourohfour': 'fourohfour'
       };
@@ -614,6 +687,18 @@
       Router.prototype.herramientas = function() {
         var view;
         view = new SAT.herramientasView;
+        return view.render();
+      };
+
+      Router.prototype.herramientas_calculadoras = function() {
+        var view;
+        view = new SAT.herramientasCalculadorasView;
+        return view.render();
+      };
+
+      Router.prototype.herramientas_calculadora_isr = function() {
+        var view;
+        view = new SAT.herramientasCalculadoraIsrView;
         return view.render();
       };
 

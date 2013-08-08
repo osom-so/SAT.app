@@ -250,6 +250,63 @@ Contraseña:<br>
 <li><a href="/herramientas/calculadoras">Calculadoras</a></li>
 </ul>
 </script>
+<script type="text/template" id="tmpl-herramientas-calculadoras">
+<div class="wrap">
+<h2 class="titulo">Calculadoras</h2>
+</div>
+<ul class="touch-list big zebra-list">
+<li><a href="/herramientas/calculadora/isr">ISR</a></li>
+<li><a href="/herramientas/calculadora/isr">Retenciones salariales</a></li>
+<li><a href="/herramientas/calculadora/isr">IMSS</a></li>
+<li><a href="/herramientas/calculadora/isr">Infonavit</a></li>
+</ul>
+</script>
+<script type="text/template" id="tmpl-herramientas-calculadora-isr">
+<div id="seccion-calculadora">
+<div class="wrap">
+<h2 class="titulo">Calculadora ISR</h2>
+</div>
+<form>
+<input type="text" class="inputtext inputnumber blue-darker bg" placeholder="Ingresos del periodo">
+</form>
+<table id="calc">
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>-</td>
+<td>0</td>
+<td>#</td>
+</tr>
+</table>
+<table id="periodo">
+<tr>
+<td>Semanal</td>
+<td class="selected">Quincenal</td>
+<td>Mensual</td>
+</tr>
+</table>
+<table id="resultado">
+<tr>
+<td width="40%" class="rgt"><small>ISR a retener:</small><br><big class="big">$3,228.37</big></td>
+<td width="40%" class="rgt"><small>Sueldo neto:</small><br><big class="big">$16,985.93</big></td>
+<td width="20%"><span class="icon"></span></td>
+</tr>
+</table>
+</div>
+</script>
 <script type="text/template" id="tmpl-ayuda">
 <div class="wrap">
 <h2 class="titulo">Ayuda</h2>

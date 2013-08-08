@@ -173,6 +173,38 @@ $ ->
 
   class SAT.herramientasView extends Backbone.AnimView
     template: _.template $('#tmpl-herramientas').html()
+    events:
+      'click a': 'evt_menuitem'
+    evt_menuitem: (e)->
+      e.preventDefault()
+      router.navigate $(e.currentTarget).attr('href'), true
+    render: ->
+      @$el.html @template
+      @
+
+  class SAT.herramientasCalculadorasView extends Backbone.AnimView
+    template: _.template $('#tmpl-herramientas-calculadoras').html()
+    events:
+      'click a': 'evt_menuitem'
+    evt_menuitem: (e)->
+      e.preventDefault()
+      router.navigate $(e.currentTarget).attr('href'), true
+    render: ->
+      @$el.html @template
+      @
+
+  class SAT.herramientasCalculadoraIsrView extends Backbone.AnimView
+    template: _.template $('#tmpl-herramientas-calculadora-isr').html()
+    events:
+      'submit form': 'evt_submit'
+      'click #periodo td': 'evt_cambiar_periodo'
+    evt_submit: (e)->
+      e.preventDefault()
+      @$el.find('#resultado').show()
+    evt_cambiar_periodo: (e)->
+      $this = $(e.currentTarget)
+      $this.closest('table').find('td.selected').removeClass 'selected'
+      $this.addClass 'selected'
     render: ->
       @$el.html @template
       @
@@ -241,6 +273,8 @@ $ ->
       'pagos': 'pagos'
       'feedback': 'feedback'
       'herramientas': 'herramientas'
+      'herramientas/calculadoras': 'herramientas_calculadoras'
+      'herramientas/calculadora/isr': 'herramientas_calculadora_isr'
       'ayuda': 'ayuda'
       '*fourohfour': 'fourohfour'
     index: ->
@@ -273,6 +307,12 @@ $ ->
       view.render()
     herramientas: ->
       view = new SAT.herramientasView
+      view.render()
+    herramientas_calculadoras: ->
+      view = new SAT.herramientasCalculadorasView
+      view.render()
+    herramientas_calculadora_isr: ->
+      view = new SAT.herramientasCalculadoraIsrView
       view.render()
     ayuda: ->
       view = new SAT.ayudaView

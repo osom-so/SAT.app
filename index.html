@@ -272,6 +272,40 @@ Contraseña:<br>
 <li><a href="/feedback/reconocimientos">Reconocimientos</a></li>
 </ul>
 </script>
+<script type="text/template" id="tmpl-feedback-sugerencia">
+<div id="seccion-feedback-enviar">
+<h2 class="titulo has-icon"><span class="icon icon-feedback-white"></span> Enviar sugerencia</h2>
+<form class="wrap" action="/feedback/sugerencia/enviar">
+<p>
+  <select class="select-tramite">
+  <option>Selecciona trámite</option>
+  </select>
+</p>
+<p>
+  <span class="has-icon"><span class="icon icon-feedback-fecha"></span><input type="text" class="inputtext full inputdate" placeholder="Fecha"></span>
+</p>
+<p>
+  <span class="has-icon"><span class="icon icon-feedback-lugar"></span><input type="text" class="inputtext full inputlugar" placeholder="Lugar"></span>
+</p>
+<p>
+  <textarea class="textarea full" placeholder="Mensaje"></textarea>
+</p>
+<div class="table">
+  <div class="tcell t55 col-share">
+    Compartir sugerencia:
+    <p class="ctr">
+    <span class="icon icon-share-fb"></span>
+    <span class="icon icon-share-tw"></span>
+    <span class="icon icon-share-mail"></span>
+    </p>
+  </div>
+  <div class="tcell t45 middle col-submit">
+    <input type="submit" class="inputsubmit main block" value="Enviar">
+  </div>
+</div>
+</form>
+</div>
+</script>
 <script type="text/template" id="tmpl-herramientas">
 <h2 class="titulo has-icon"><span class="icon icon-herramientas-white"></span> Herramientas</h2>
 <ul class="touch-list big zebra-list">

@@ -187,6 +187,17 @@ $ ->
       @$el.html @template
       @
 
+  class SAT.feedbackSugerenciaView extends Backbone.AnimView
+    template: _.template $('#tmpl-feedback-sugerencia').html()
+    events:
+      'submit form': 'evt_submit'
+    evt_submit: (e)->
+      e.preventDefault()
+      router.navigate $(e.currentTarget).attr('href'), true
+    render: ->
+      @$el.html @template
+      @
+
   class SAT.herramientasView extends Backbone.AnimView
     template: _.template $('#tmpl-herramientas').html()
     events:
@@ -295,6 +306,7 @@ $ ->
       'citas/agendar/confirmacion': 'citas_agendar_confirmacion'
       'pagos': 'pagos'
       'feedback': 'feedback'
+      'feedback/:id': 'feedback_view'
       'herramientas': 'herramientas'
       'herramientas/calculadoras': 'herramientas_calculadoras'
       'herramientas/calculadora/isr': 'herramientas_calculadora_isr'
@@ -330,6 +342,9 @@ $ ->
       view.render()
     feedback: ->
       view = new SAT.feedbackView
+      view.render()
+    feedback_view: ->
+      view = new SAT.feedbackSugerenciaView
       view.render()
     herramientas: ->
       view = new SAT.herramientasView

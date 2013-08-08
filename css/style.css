@@ -32,12 +32,12 @@ header#app-header span.logo {
   -moz-transition: left 0.33s;
   -o-transition: left 0.33s;
   transition: left 0.33s;
-  background-image: url('/img/layout-s6814966947.png');
+  background-image: url('/img/layout-sf82612cbbb.png');
   background-position: 0 0;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 84px;
   height: 28px;
 }
@@ -92,12 +92,12 @@ header#app-header .notificaciones-cont:after {
   right: 50px;
   z-index: 100;
   content: '';
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -815.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -963.5px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 27px;
   height: 16.5px;
 }
@@ -967,333 +967,392 @@ ul.no-bullets {
 }
 
 .icon-header-back {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -915px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -1063px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 17px;
   height: 16px;
 }
 
 .icon-header-help {
-  background-image: url('/img/layout-s6814966947.png');
+  background-image: url('/img/layout-sf82612cbbb.png');
   background-position: 0 -30px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 25.5px;
   height: 25.5px;
 }
 
 .icon-header-notif {
-  background-image: url('/img/layout-s6814966947.png');
+  background-image: url('/img/layout-sf82612cbbb.png');
   background-position: 0 -169px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 24px;
   height: 27.5px;
 }
 
 .icon-home-cita {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -615.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -703px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 33px;
   height: 33px;
 }
 
 .icon-home-pagos {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -580.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -668px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 33px;
   height: 33px;
 }
 
 .icon-home-feedback {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -444px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -498px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 33px;
   height: 33px;
 }
 
 .icon-home-herramientas {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -306.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -333.5px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 33px;
   height: 33px;
 }
 
 .icon-home-ayuda {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -780.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -895px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 33px;
   height: 33px;
 }
 
 .icon-home-cita {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -615.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -703px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 33px;
   height: 33px;
 }
 
 .icon-citas-white {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -678px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -765.5px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 32.5px;
   height: 35.5px;
 }
 
 .icon-cita-white {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -877.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -1025.5px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 32.5px;
   height: 35.5px;
 }
 
 .icon-pagos-white {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -479px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -533px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 32.5px;
   height: 35.5px;
 }
 
 .icon-feedback-white {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -516.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -570.5px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 32.5px;
   height: 35.5px;
 }
 
 .icon-herramientas-white {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -341.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -368.5px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 32.5px;
   height: 35.5px;
 }
 
 .icon-ayuda-white {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -715.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -830px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 32.5px;
   height: 35.5px;
 }
 
 .icon-ui-del {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -855.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -1003.5px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 36px;
   height: 20px;
 }
 
 .icon-ui-dinero {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -834px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -982px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 12px;
   height: 19.5px;
 }
 
 .icon-ui-error {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -379px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -433px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 25.5px;
   height: 25.5px;
 }
 
 .icon-ui-info {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -554px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -608px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 24px;
   height: 24.5px;
 }
 
 .icon-ui-next {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -933px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -1081px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 11.5px;
   height: 15px;
 }
 
 .icon-ui-success {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -650.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -738px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 25.5px;
   height: 25.5px;
 }
 
 .icon-ui-warning {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -753px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -867.5px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 25.5px;
   height: 25.5px;
 }
 
 .icon-error {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -379px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -433px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 25.5px;
   height: 25.5px;
 }
 
 .icon-pagado {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -650.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -738px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 25.5px;
   height: 25.5px;
 }
 
 .icon-pendiente {
-  background-image: url('/img/layout-s6814966947.png');
-  background-position: 0 -753px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -867.5px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 25.5px;
   height: 25.5px;
 }
 
 .icon-notif-error {
-  background-image: url('/img/layout-s6814966947.png');
+  background-image: url('/img/layout-sf82612cbbb.png');
   background-position: 0 -198.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 37px;
   height: 34px;
 }
 
 .icon-notif-success {
-  background-image: url('/img/layout-s6814966947.png');
+  background-image: url('/img/layout-sf82612cbbb.png');
   background-position: 0 -270.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 37px;
   height: 34px;
 }
 
 .icon-notif-news {
-  background-image: url('/img/layout-s6814966947.png');
+  background-image: url('/img/layout-sf82612cbbb.png');
   background-position: 0 -133px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 37px;
   height: 34px;
 }
 
 .icon-notif-warning {
-  background-image: url('/img/layout-s6814966947.png');
+  background-image: url('/img/layout-sf82612cbbb.png');
   background-position: 0 -234.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 37px;
   height: 34px;
 }
 
 .icon-huge-warning {
-  background-image: url('/img/layout-s6814966947.png');
+  background-image: url('/img/layout-sf82612cbbb.png');
   background-position: 0 -57.5px;
-  -webkit-background-size: 84px 948px;
-  -moz-background-size: 84px 948px;
-  -o-background-size: 84px 948px;
-  background-size: 84px 948px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
   width: 73.5px;
   height: 73.5px;
+}
+
+.icon-feedback-fecha {
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -634.5px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
+  width: 31.5px;
+  height: 31.5px;
+}
+
+.icon-feedback-lugar {
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -930px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
+  width: 31.5px;
+  height: 31.5px;
+}
+
+.icon-share-mail {
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -406px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
+  width: 25px;
+  height: 25px;
+}
+
+.icon-share-fb {
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -803px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
+  width: 25px;
+  height: 25px;
+}
+
+.icon-share-tw {
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -306.5px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
+  width: 25px;
+  height: 25px;
+}
+
+.has-icon {
+  position: relative;
 }
 
 .padded-bottom {
@@ -1444,23 +1503,28 @@ input, textarea {
   box-sizing: border-box;
 }
 
-.inputtext, .inputsubmit {
+.inputtext, .inputsubmit, .textarea, select {
+  font-family: proxima-nova-soft, Helvetica, sans-serif;
   font-size: 1rem;
   border-radius: 0;
   margin: 0;
 }
 
-.inputtext {
+.inputtext, .textarea {
   color: #666;
-  border: 1px solid #eee;
-  padding: 0.3rem;
+  box-shadow: -1px -1px 0px rgba(129, 173, 224, 0.3);
+  border: 1px solid #f1f5fa;
+  padding: 0.6rem 0.5rem;
 }
-.inputtext.uppercase {
+.inputtext.full, .textarea.full {
+  width: 100%;
+}
+.inputtext.uppercase, .textarea.uppercase {
   text-transform: uppercase;
 }
-.inputtext:focus {
+.inputtext:focus, .textarea:focus {
   outline: 0;
-  border: 1px solid #999;
+  box-shadow: -1px -1px 0px rgba(129, 173, 224, 0.75);
   color: #333;
 }
 
@@ -1470,6 +1534,7 @@ input, textarea {
 }
 .inputsubmit.main {
   background: #1b2a40;
+  background: linear-gradient(#1b2a40 50%, #131e2e 50%);
   color: #fff;
 }
 .inputsubmit.block {
@@ -1513,6 +1578,24 @@ input, textarea {
 }
 #seccion-notificacion .accion {
   padding: 20px 0;
+}
+
+#seccion-feedback-enviar {
+  background: #f1f5fa;
+}
+#seccion-feedback-enviar form .has-icon .icon {
+  position: absolute;
+  top: -6px;
+  right: 10px;
+}
+#seccion-feedback-enviar .textarea {
+  min-height: 200px;
+}
+#seccion-feedback-enviar .select-tramite {
+  padding: 10px;
+  width: 100%;
+  background: #172336;
+  color: #fff;
 }
 
 #seccion-cita-lugares li.fecha {

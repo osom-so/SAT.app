@@ -5,6 +5,8 @@
 @import "compass/css3/transform";
 @import "compass/utilities/sprites";
 
+$font: proxima-nova-soft, Helvetica, sans-serif;
+
 $header-height: 44px;
 $layout: sprite-map("layout/*.png", $spacing: 4px);
 

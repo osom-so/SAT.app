@@ -217,6 +217,11 @@ $ ->
 
   class SAT.ayudaView extends Backbone.AnimView
     template: _.template $('#tmpl-ayuda').html()
+    events:
+      'click a': 'evt_menuitem'
+    evt_menuitem: (e)->
+      e.preventDefault()
+      router.navigate $(e.currentTarget).attr('href'), true
     render: ->
       @$el.html @template
       @

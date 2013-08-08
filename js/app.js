@@ -483,6 +483,15 @@
 
       ayudaView.prototype.template = _.template($('#tmpl-ayuda').html());
 
+      ayudaView.prototype.events = {
+        'click a': 'evt_menuitem'
+      };
+
+      ayudaView.prototype.evt_menuitem = function(e) {
+        e.preventDefault();
+        return router.navigate($(e.currentTarget).attr('href'), true);
+      };
+
       ayudaView.prototype.render = function() {
         this.$el.html(this.template);
         return this;

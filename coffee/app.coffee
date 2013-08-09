@@ -193,7 +193,7 @@ $ ->
       'submit form': 'evt_submit'
     evt_submit: (e)->
       e.preventDefault()
-      router.navigate $(e.currentTarget).attr('href'), true
+      router.navigate $(e.currentTarget).attr('action'), true
     render: ->
       @$el.html @template
       @

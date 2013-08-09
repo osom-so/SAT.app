@@ -1120,6 +1120,17 @@ ul.no-bullets {
   height: 35.5px;
 }
 
+.icon-calculadora-white {
+  background-image: url('/img/layout-sf82612cbbb.png');
+  background-position: 0 -460.5px;
+  -webkit-background-size: 84px 1096px;
+  -moz-background-size: 84px 1096px;
+  -o-background-size: 84px 1096px;
+  background-size: 84px 1096px;
+  width: 32.5px;
+  height: 35.5px;
+}
+
 .icon-ayuda-white {
   background-image: url('/img/layout-sf82612cbbb.png');
   background-position: 0 -830px;
@@ -1566,7 +1577,7 @@ input, textarea {
   padding: 1% 0;
 }
 #seccion-notificacion header {
-  padding: 10px 10px 15px;
+  padding: 10px 0 15px;
 }
 #seccion-notificacion header h1 {
   font-size: 3.2rem;

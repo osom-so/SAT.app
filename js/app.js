@@ -423,7 +423,7 @@
 
       feedbackSugerenciaView.prototype.evt_submit = function(e) {
         e.preventDefault();
-        return router.navigate($(e.currentTarget).attr('href'), true);
+        return router.navigate($(e.currentTarget).attr('action'), true);
       };
 
       feedbackSugerenciaView.prototype.render = function() {

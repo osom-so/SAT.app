@@ -151,6 +151,7 @@ ul.no-bullets{
 .icon-pagos-white{ @include bg($layout, 'white_pagos'); }
 .icon-feedback-white{ @include bg($layout, 'white_feedback'); }
 .icon-herramientas-white{ @include bg($layout, 'white_herramientas'); }
+.icon-calculadora-white{ @include bg($layout, 'white_calculadora'); }
 .icon-ayuda-white{ @include bg($layout, 'white_ayuda'); }
 .icon-ui-del{ @include bg($layout, 'ui_del'); }
 .icon-ui-dinero{ @include bg($layout, 'ui_dinero'); }
@@ -360,7 +361,7 @@ input, textarea{
   }
 
   header{
-    padding: 10px 10px 15px;
+    padding: 10px 0 15px;
     h1{
       font-size: 3.2rem;
       color: #fff;

@@ -1366,6 +1366,14 @@ ul.no-bullets {
   position: relative;
 }
 
+.icon-share-tw, .icon-share-mail {
+  border: 5px solid #9297a0;
+}
+
+.icon-share-fb {
+  border: 5px solid #4d70ae;
+}
+
 .padded-bottom {
   padding-bottom: 20px;
 }
@@ -1708,4 +1716,8 @@ input, textarea {
 }
 #pagos-list .st-error .id-status, #pagos-list .st-error .id-col {
   background: #fef0eb;
+}
+
+.number {
+  color: #999;
 }

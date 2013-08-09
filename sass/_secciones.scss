@@ -176,6 +176,13 @@ ul.no-bullets{
 
 .has-icon{ position: relative; }
 
+.icon-share-tw, .icon-share-mail{
+border:5px solid #9297a0;
+}
+.icon-share-fb, {
+border:5px solid #4d70ae;
+}
+
 .padded-bottom{
   padding-bottom: 20px;
 }
@@ -518,4 +525,8 @@ input, textarea{
       background: $bg-red;
     }
   }
+}
+.number{
+  color:#999;
+
 }

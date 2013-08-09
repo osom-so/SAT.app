@@ -1686,7 +1686,6 @@ input, textarea {
   color: #81ade0;
 }
 #seccion-calculadora table#resultado {
-  display: none;
   width: 100%;
   text-align: center;
   font-size: 1.2rem;
